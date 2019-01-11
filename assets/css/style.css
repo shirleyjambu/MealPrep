@@ -1,9 +1,11 @@
 #homebody{
   background-image: url("../images/kitchen_bg.jpg");
-  /*background-size: 100% 100%;*/
-
+  background-size: 100% 100%;
 }
 
+h1{
+  font-size: 50px;
+}
 .contactBackground{
   background-color: whitesmoke;
 }
