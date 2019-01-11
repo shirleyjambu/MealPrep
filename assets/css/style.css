@@ -13,3 +13,8 @@ h1{
 #navHome{
   margin-left: auto;
 }
+
+.card{
+  background-color: lemonchiffon;
+  color:gray;
+}

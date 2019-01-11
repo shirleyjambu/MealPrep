@@ -5,8 +5,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+ 
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+
+  <!--Materialize-->
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
   <link rel="stylesheet" href="./assets/css/style.css">
   <title>MealPrep</title>
 
@@ -26,57 +34,46 @@
   <!-- Main Container-->
   <div class="container">
       <h1 class="display-4 main-header">Let's Get Cooking</h1>
-    <!-- Jumbotron-->
-    <!-- <div class="jumbotron">
-      <span>Sign Up</span>
-      <h1 class="display-4">Meal Prep</h1>
-      <p class="lead">Let's Get Cookin'</p>
-      <hr class="my-4">
 
-    </div> -->
-
-    <!-- Card deck-->
-    <div class="card-deck">
-      <!-- Card 1-->
-      <div class="card">
-        <div class="card-header">
-          Latest
-        </div>
-        <div class="card-body">
-          click for latest
-        </div>
-      </div>
-
-      <!-- Card 2-->
-      <div class="card">
-        <div class="card-header">
-          Get Cooking
-        </div>
-        <div class="card-body">
-          <p>Perfect your preferred cuisine!</p>
-          <p class="lead">
-            <a class="btn btn-primary btn-lg" href="#" role="button">Search our API!</a>
-          </p>
-        </div>
-      </div>
-
-      <!-- Card 3-->
-      <div class="card">
-        <div class="card-header">
-          Login
-        </div>
-        <div class="card-body">
-          <!-- Login Card-->
-          <div id="firebaseui-auth-container"></div>
-          <div id="loader">Loading...</div>
-        </div>
-      </div>
-    </div>
-  </div>
+      <!-- Card Panel -->
+      <div class = "row">
+         <!-- Card Trending -->         
+          <div class = "col s12 m3">
+             <div class = "card medium">
+                  <div class="card-content">
+                    <span class="card-title">Trending & Useful</span>
+                    <p>Trending Recipes, Useful Links</p>
+                  </div>
+             </div>
+          </div>
+          <!-- Card Search-->
+          <div class = "col s12 m3">
+             <div class = "card medium">
+                <div class="card-content">
+                    <span class="card-title">Get Cooking!</span>
+                    <p>Perfect your preferred cuisine!</p>
+                  </div>
+             </div>
+          </div>
+          <!-- Card Login-->
+          <div class = "col s12 m3">
+             <div class = "card medium">
+                  <div class="card-content">
+                    <span class="card-title">Login for more</span>
+                      <!-- Login Card-->
+                      <div id="firebaseui-auth-container"></div>
+                      <div id="loader">Loading...</div
+                  </div>
+             </div>
+          </div>
+       </div>     	  
+      <!-- End Card Panel-->
+    
+  </div><!--End of Container-->
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+ 
 
   <script src="./assets/javascript/meal.js"></script>
   <script src="./assets/javascript/signIn.js"></script>
