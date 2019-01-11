@@ -22,7 +22,7 @@ $("#login-btn").on("click",function(){
   loggedIn = checkValidUser(userName,password);  
 
   if(loggedIn){
-    location.replace("preferences.html")
+    location.replace("preferences.html");
   }else{
     $("#message").text("Invalid");
   }
