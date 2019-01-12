@@ -3,7 +3,22 @@
   background-size: 100% 100%;
 }
 
+.my-container{ 
+  width: 90%;
+}
+
+nav{
+  background-color:whitesmoke;
+  color: black;
+}
+
+.page-footer{
+  background-color:whitesmoke;
+}
+
+
 h1{
+  color: black;
   font-size: 50px;
 }
 .contactBackground{
@@ -15,6 +30,8 @@ h1{
 }
 
 .card{
-  background-color: lemonchiffon;
-  color:gray;
+  border-radius: 1.5em;
+  /*background-color:rgba(255, 208, 0, 0.274);*/ 
+  background-color: whitesmoke;
+  color:darkolivegreen;
 }
