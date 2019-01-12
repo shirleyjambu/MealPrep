@@ -1,83 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>MealPrep</title>
+    <!-- Material Icon CDN -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Materialize CSS CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
- 
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    <!-- Firebase Reference -->
+    <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
 
-  <!--Materialize-->
-  <!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
-  <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <title>MealPrep</title>
-
-  <!-- Firebase Reference -->
-  <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
-  <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
-  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
-
-</head>
-<div class="container">
-        <span>
-          <a id="navHome" href="contact.html">Contact the Developers</a>
-        </span>
-      </div>
-
-<body id="homebody">
-  <!-- Main Container-->
-  <div class="container">
-      <h1 class="display-4 main-header">Let's Get Cooking</h1>
-
-      <!-- Card Panel -->
-      <div class = "row">
-         <!-- Card Trending -->         
-          <div class = "col s12 m3">
-             <div class = "card medium">
-                  <div class="card-content">
-                    <span class="card-title">Trending & Useful</span>
-                    <p>Trending Recipes, Useful Links</p>
-                  </div>
+    <!-- Your custom styles -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+  </head>
+  <body id="homebody">
+      <header>
+        <h1>Let's get Cooking</h1>
+        
+         
+      </header>
+    <main>
+    <!-- Card Panel -->
+    <div class = "row">
+        <!-- Card Trending -->         
+         <div class = "col s12 m4">
+            <div class = "card medium">
+                 <div class="card-content">
+                   <span class="card-title">Trending & Useful</span>
+                   <p>Trending Recipes, Useful Links</p>
+                    <!-- Code for Contact us Modal-->
+                    <!-- Modal Trigger -->
+         <a class="waves-effect waves-light modal-trigger" href="#modal1">Contact the Developers</a>
+          
+         <!-- Modal Structure -->
+         <div id="modal1" class="modal">
+           <div class="modal-content">
+             <h4>Contact the Developers</h4>
+             <div id="contact">
+                <section class="main-section">
+                
+                    <!-- <form action="https://formspree.io/your@email.com" method="POST" this sends the input from the form to my personal email address. The rules for this api state that each input must have a name attrribute as below with the first being name second being email and third being message -->
+            
+                    <form action="https://formspree.io/brucewilson1103@gmail.com" method="POST">
+                      <div class="form-group">
+                        <label for="name">Name:</label> <br>
+                        <input type="text" id="name" name="name" placeholder="John Smith" required="required">
+            
+                      </div>
+            
+                      <div class="form-group">
+                        <label for="exampleFormControlInput1">Email address:</label>
+                        <input type="email" class="form-control" id="exampleFormControlInput1" name="email" placeholder="name@example.com">
+                      </div>
+            
+                      <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Message:</label>
+                        <textarea class="form-control" name="message" id="exampleFormControlTextarea1" rows="3"></textarea>
+                      </div>
+            
+                      <div class="spacer1"> <input class="btn btn-info" type="submit" value="Submit">
+                      </div>
+                    </form>
+            
+              </section>
              </div>
-          </div>
-          <!-- Card Search-->
-          <div class = "col s12 m3">
-             <div class = "card medium">
-                <div class="card-content">
-                    <span class="card-title">Get Cooking!</span>
-                    <p>Perfect your preferred cuisine!</p>
-                  </div>
-             </div>
-          </div>
-          <!-- Card Login-->
-          <div class = "col s12 m3">
-             <div class = "card medium">
-                  <div class="card-content">
-                    <span class="card-title">Login for more</span>
-                      <!-- Login Card-->
-                      <div id="firebaseui-auth-container"></div>
-                      <div id="loader">Loading...</div
-                  </div>
-             </div>
-          </div>
-       </div>     	  
-      <!-- End Card Panel-->
-    
-  </div><!--End of Container-->
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
- 
+           </div>
+           <div class="modal-footer">
+            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+           </div>
+         </div>
+                    <!-- End of Code for Modal-->
+                 </div>
+            </div>
+         </div>
+         <!-- Card Search-->
+         <div class = "col s12 m4">
+            <div class = "card medium">
+               <div class="card-content">
+                   <span class="card-title">Get Cooking!</span>
+                   <p>Perfect your preferred cuisine!</p>
+                 </div>
+            </div>
+         </div>
+         <!-- Card Login-->
+         <div class = "col s12 m4">
+            <div class = "card medium">
+                 <div class="card-content">
+                   <span class="card-title">Login for more</span>
+                     <!-- Login Card-->
+                     <div id="firebaseui-auth-container"></div>
+                     <div id="loader">Loading...</div
+                 </div>
+            </div>
+         </div>
+      </div>     	  
+     <!-- End Card Panel-->  
+      
+    </main>
+   
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <!-- Materialize JS CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="./assets/javascript/meal.js"></script>
+    <script src="./assets/javascript/signIn.js"></script>
+    <script>
+      $("document").ready(function(){
+        $('#modal1').modal();
+      });
 
-  <script src="./assets/javascript/meal.js"></script>
-  <script src="./assets/javascript/signIn.js"></script>
-
+      
+    </script>
 </body>
-
 </html>
