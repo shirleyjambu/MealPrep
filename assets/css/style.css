@@ -1,6 +1,6 @@
 #homebody{
-  background-image: url("../images/kitchen_bg.jpg");
-  background-size: 100% 100%;
+  background-image: url("../images/bowl.jpg");
+  background-size: 100%;
 }
 
 .my-container{ 
@@ -18,7 +18,7 @@ nav{
 
 
 h1{
-  color: black;
+  color: rgb(21, 41, 20);
   font-size: 50px;
 }
 .contactBackground{
@@ -34,4 +34,11 @@ h1{
   /*background-color:rgba(255, 208, 0, 0.274);*/ 
   background-color: whitesmoke;
   color:darkolivegreen;
+}
+h1 {
+  font-family: 'Princess Sofia', cursive;
+  text-shadow: 4px 4px 4px rgb(255, 255, 255);
+  font-size: 75px;
+  padding-left: 10px;
+  color: rgb(21, 41, 20);
 }

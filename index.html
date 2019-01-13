@@ -5,24 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>MealPrep</title>
+    
     <!-- Material Icon CDN -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Materialize CSS CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    
 
     <!-- Firebase Reference -->
     <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
     <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
-
-
+    
+    <link rel="stylesheet"
+    <link href="https://fonts.googleapis.com/css?family=Princess Sofia:400,700" rel="stylesheet">
     <!-- Your custom styles -->
     <link rel="stylesheet" href="./assets/css/style.css">
   </head>
   <body id="homebody">
       <header>
-        <h1>Let's get Cooking</h1>
-        
+        <h1>Pestal & Mortar</h1>
+        <!-- I was also thinking about " Bouquet Garni "-->
          
       </header>
     <main>
@@ -32,12 +35,27 @@
          <div class = "col s12 m4">
             <div class = "card medium">
                  <div class="card-content">
+                   
                    <span class="card-title">Trending & Useful</span>
                    <p>Trending Recipes, Useful Links</p>
                     <!-- Code for Contact us Modal-->
                     <!-- Modal Trigger -->
          <a class="waves-effect waves-light modal-trigger" href="#modal1">Contact the Developers</a>
-          
+         <ul class="collapsible popout">
+            <li>
+              <div class="collapsible-header"><i class="material-icons">trending_up</i>Trending Recipes</div>
+              <div class="collapsible-body"><span>~</span></div>
+            </li>
+            <li>
+              <div class="collapsible-header"><i class="material-icons">link</i>Reduce Food Waste</div>
+              <div class="collapsible-body"><span>~</span></div>
+            </li>
+            <li>
+              <div class="collapsible-header"><i class="material-icons">whatshot</i>Seasonal Food Guide</div>
+              <div class="collapsible-body"><span>How to Use the Seasonal Food Guide
+                </span></div>
+            </li>
+          </ul>
          <!-- Modal Structure -->
          <div id="modal1" class="modal">
            <div class="modal-content">
