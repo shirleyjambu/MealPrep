@@ -39,6 +39,10 @@ var uiConfig = {
     //firebase.auth.GithubAuthProvider.PROVIDER_ID,
     firebase.auth.EmailAuthProvider.PROVIDER_ID,
     //firebase.auth.PhoneAuthProvider.PROVIDER_ID
+    // {
+    //   provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,
+    //   requireDisplayName : true
+    // }
   ],
   // Terms of service url.
   tosUrl: 'welcome.html',
@@ -48,3 +52,4 @@ var uiConfig = {
 
 // The start method will wait until the DOM is loaded.
 ui.start('#firebaseui-auth-container', uiConfig);
+
