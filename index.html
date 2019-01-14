@@ -18,7 +18,13 @@
   <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
   <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
 
-  <link rel="stylesheet" <link href="https://fonts.googleapis.com/css?family=Princess Sofia:400,700" rel="stylesheet">
+
+
+
+
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Princess Sofia:400,700" rel="stylesheet">
+
   <!-- Your custom styles -->
   <link rel="stylesheet" href="./assets/css/style.css">
 </head>
@@ -44,7 +50,9 @@
               <!-- Code for Contact us Modal-->
               <!-- Modal Trigger -->
 
-              <ul class="collapsible popout">
+
+              <ul class="collapsible popout" data-collapsible="accordion">
+
                 <li>
                   <div class="collapsible-header"><i class="material-icons">trending_up</i>Trending Recipes</div>
                   <div class="collapsible-body"><span>~</span></div>
@@ -108,6 +116,7 @@
                 </div>
               </div>
               <!-- End of Code for Modal-->
+
             </div>
           </div>
         </div>
@@ -117,7 +126,6 @@
             <div class="card-content">
               <span class="card-title">Get Cooking!</span>
               <p>Perfect your preferred cuisine!</p>
-
             </div>
           </div>
         </div>
@@ -129,12 +137,18 @@
               <span class="card-title">Login for more</span>
               <!-- Login Card-->
               <div id="firebaseui-auth-container"></div>
-              <div id="loader">Loading...</div </div> </div> </div> </div> <!-- End Card Panel-->
+              <div id="loader">Loading...</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Card Panel-->
 
-              <!-- Recipes Div -->
-              <div id="recipes">
+      <!-- Recipes Div -->
+      <div id="recipes">
 
-              </div>
+      </div>
+
 
     </main>
   </div>
@@ -142,9 +156,17 @@
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
     crossorigin="anonymous"></script>
   <!-- Materialize JS CDN -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
   <script src="./assets/javascript/meal.js"></script>
   <script src="./assets/javascript/signIn.js"></script>
+  <script src="./assets/javascript/cardTwo.js"></script>
+  
   <script>
     $("document").ready(function () {
       $('#modal1').modal();

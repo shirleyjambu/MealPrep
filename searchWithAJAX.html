@@ -4,347 +4,285 @@
 
 <head>
 
-<meta charset="UTF-8">
+  <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-<title>Title</title>
+  <title>Title</title>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
+  <link rel="stylesheet" href="./assets/css/style.css">
 
-
+  <!-- 
 <style>
 
 .card-action-right {
 
   float: right;
-
 }
-
-
-
-
-
-
 
 .card__date {
 
   background: #08c;
-
   position: absolute;
-
   top: 20px;
-
   right: 20px;
-
   width: 45px;
-
   height: 45px;
-
   border-radius: 50%;
-
   color: #fff;
-
   text-align: center;
-
   line-height: 13px;
-
   font-weight: bold;
-
   padding-top: 10px;
-
 }
 
 .card__date__day {
 
   display: block;
-
   font-size: 14px;
-
 }
 
 .card__date__month {
 
   display: block;
-
   font-size: 10px;
-
   text-transform: uppercase;
-
 }
 
 li{
 
 display:inline-block;
-
 }
 
-</style>
+</style> -->
 
 </head>
 
 <body>
 
+  <div class="card-panel grey lighten-2 jumbotronStyle">
+    <div>
+      <h1>Let's get Cooking</h1>
+    </div>
+  </div>
 
+  <div style="width:90%;margin:0 auto;">
 
-    <body>
+    <ul id="dropdown1" class="dropdown-content">
+      <li><a href="#" onclick="menu_click(this)">Breakfast</a></li>
+      <li><a href="#" onclick="menu_click(this)">Lunch</a></li>
+      <li><a href="#" onclick="menu_click(this)">Dinner</a></li>
+      <li><a href="#" onclick="menu_click(this)">Dessert</a></li>
 
-        <div style="width:90%;margin:0 auto;">
+    </ul>
 
-    		<ul id="dropdown1" class="dropdown-content">
 
-			  <li><a href="#" onclick="menu_click(this)">Breakfast</a></li>
 
-			  <li><a href="#" onclick="menu_click(this)">Lunch</a></li>
+    <ul id="dropdown2" class="dropdown-content">
 
-			  <li><a href="#" onclick="menu_click(this)">Dinner</a></li>
+      <li><a href="#" onclick="menu_click(this)">American</a></li>
+      <li><a href="#" onclick="menu_click(this)">Mexican</a></li>
+      <li><a href="#" onclick="menu_click(this)">Italian</a></li>
+      <li><a href="#" onclick="menu_click(this)">Chinese</a></li>
+      <li><a href="#" onclick="menu_click(this)">Japanese</a></li>
+      <li><a href="#" onclick="menu_click(this)">French</a></li>
 
-			  <li><a href="#" onclick="menu_click(this)">Dessert</a></li>
+    </ul>
 
-			</ul>
 
-			
+    <ul id="dropdown3" class="dropdown-content">
 
-			<ul id="dropdown2" class="dropdown-content">
+      <li><a href="#" onclick="menu_click(this)">Meat</a></li>
+      <li><a href="#" onclick="menu_click(this)">Fish</a></li>
+      <li><a href="#" onclick="menu_click(this)">Vegetables</a></li>
 
-			  <li><a href="#" onclick="menu_click(this)">American</a></li>
+    </ul>
 
-			  <li><a href="#" onclick="menu_click(this)">Mexican</a></li>
 
-			  <li><a href="#" onclick="menu_click(this)">Italian</a></li>
 
-			  <li><a href="#" onclick="menu_click(this)">Chinese</a></li>
+    <!-- Drop Down Menus -->
+    <li>
 
-			  <li><a href="#" onclick="menu_click(this)">Japanese</a></li>
+      <a class="dropdown-button btn" href="#!" data-activates="dropdown1">Meal Type
 
-			  <li><a href="#" onclick="menu_click(this)">French</a></li>
+        <i class="material-icons right">arrow_drop_down</i>
+      </a>
 
-			</ul>
+      <a class="dropdown-button btn" href="#!" data-activates="dropdown2">Cuisine
 
-			
+        <i class="material-icons right">arrow_drop_down</i>
 
-			<ul id="dropdown3" class="dropdown-content">
+      </a>
 
-			  <li><a href="#" onclick="menu_click(this)">Meat</a></li>
+      <a class="dropdown-button btn" href="#!" data-activates="dropdown3">Ingredients
 
-			  <li><a href="#" onclick="menu_click(this)">Fish</a></li>
+        <i class="material-icons right">arrow_drop_down</i>
 
-			  <li><a href="#" onclick="menu_click(this)">Vegetables</a></li>
+      </a>
 
-			</ul>
+    </li>
 
 
 
-			<li>
+    <!-- API -->
 
-			  <a class="dropdown-button btn" href="#!" data-activates="dropdown1">Meal Type
+    <p class="lead">
 
-			    <i class="material-icons right">arrow_drop_down</i>
+      <span style="font-size:20px;padding-right:25px;" id="title">
+        No Selected
+      </span>
 
-			  </a>
+      <a class="btn btn-primary btn-lg" href="#" role="button">Search</a>
 
-			  <a class="dropdown-button btn" href="#!" data-activates="dropdown2">Cuisine
+    </p>
 
-			    <i class="material-icons right">arrow_drop_down</i>
+  </div>
 
-			  </a>
+  <div style="width:90%;margin:0 auto;background:#ececec;border:1px solid #536e79;">
 
-			  <a class="dropdown-button btn" href="#!" data-activates="dropdown3">Ingredients
+    <div class="row" style="margin-bottom:auto;">
 
-			    <i class="material-icons right">arrow_drop_down</i>
+      <div id="appendDiv">
 
-			  </a>
+      </div>
+    </div>
+  </div>
 
-			</li>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
 
-			
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
 
-            <!-- API -->
+  <script>
+    (function ($) {
 
-            <p class="lead">
+      $(function () {
 
-				<span style="font-size:20px;padding-right:25px;" id="title">
+        $('.button-collapse').sideNav();
 
-					No Selected
+        $('select').material_select();
 
-				</span>
+        $('.dropdown-button').dropdown();
 
-				<a class="btn btn-primary btn-lg" href="#" role="button">Search</a>
 
+      }); // end of document ready
 
+    })(jQuery); // end of jQuery name space
+  </script>
 
-            </p>
+  <script>
+    function menu_click(obj)
 
-            
+    {
 
-        </div>
+      $('#title').html($(obj).html());
 
-        <div style="width:90%;margin:0 auto;background:#ececec;border:1px solid #536e79;">
+      var food = $(obj).html();
+      var app_id = '669cdf00';
+      var app_key = 'ddf1ac17ccf1eb1b54bf9cb20d749a65';
+      var queryURL = "https://api.edamam.com/search?q=" +
 
-	        <div class="row" style="margin-bottom:auto;">
+        food + "&app_id=" + app_id + "&app_key=" + app_key;
 
-	        
 
-	        	<div id="appendDiv">
 
-		        </div>
+      // Performing an AJAX request with the queryURL
 
-		        
+      $.ajax({
 
-	        </div>
+          url: queryURL,
 
-        </div>
+          method: "GET"
 
-        
+        })
 
-        
+        // After data comes back from the request
 
-        
+        .then(function (response) {
 
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+          console.log(queryURL);
 
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
 
-        <script>
 
-         (function($) {
+          console.log(response);
 
-		   $(function() {
+          // storing the data from the AJAX request in the results variable
 
+          var recipeData = response.hits;
 
+          console.log("No of Recipes : " + recipeData.length);
 
-		     $('.button-collapse').sideNav();
 
-		     $('select').material_select();
 
-		     $('.dropdown-button').dropdown();
+          // Looping through each result item
 
+          $('#appendDiv').empty();
 
 
-		   }); // end of document ready
 
-		 })(jQuery); // end of jQuery name space
+          var html = '';
 
-        </script>
+          for (var i = 0; i < recipeData.length; i++) {
 
-        <script>
+            console.log("Inside Recipes : " + recipeData[i].recipe.image);
 
-       	function menu_click(obj)
 
-       	{
 
-       		$('#title').html($(obj).html());
+            html += '<div class="col s3 m3">';
 
-       		var food = $(obj).html();
+            html += '<div class="card blue-grey darken-1">';
 
-       		var app_id = '33006e4e';
+            html += '<div class="card-content white-text">';
 
-       		var app_key = '11c2beafc47c2aa698b86b9dd5e3132e';
+            html += '<div class="card-image">';
 
-       		var queryURL = "https://api.edamam.com/search?q=" +
+            html += '<img class="content-image" src="' + recipeData[i].recipe.image + '">';
 
-			  food + "&app_id=" + app_id + "&app_key=" + app_key ;
+            html += '<div class="content-overlay">';
 
-			  
+            html += '</div>';
 
-			// Performing an AJAX request with the queryURL
+            html += '</div>';
 
-			$.ajax({
+            html += '<span class="card-title">Ingredientline</span>';
 
-			  url: queryURL,
+            html += '<p style="height:225px;">' + recipeData[i].recipe.ingredientLines + '</p>';
 
-			  method: "GET"
+            html += '</div>';
 
-			})
+            html += '</div>';
 
-			  // After data comes back from the request
+            html += '</div>';
 
-			  .then(function(response) {
 
-			    console.log(queryURL);
 
 
 
-			    console.log(response);
 
-			    // storing the data from the AJAX request in the results variable
 
-			    var recipeData = response.hits;
+          }
 
-			      console.log("No of Recipes : " + recipeData.length);
+          $('#appendDiv').append(html);
 
 
 
-			    // Looping through each result item
+        });
 
-			    $('#appendDiv').empty();
 
-			    
 
-			    var html = '';
 
-			    for (var i = 0; i < recipeData.length; i++) {
 
-			      console.log("Inside Recipes : " + recipeData[i].recipe.image);
 
-			      
 
-			        html+= '<div class="col s3 m3">';
 
-				    html+='<div class="card blue-grey darken-1">';
 
-				    html+='<div class="card-content white-text">';
-
-				    html+='<div class="card-image">';
-
-				    html+='<img class="content-image" src="' + recipeData[i].recipe.image + '">';
-
-				    html+='<div class="content-overlay">';
-
-				    html+='</div>';
-
-				    html+='</div>';
-
-				    html+='<span class="card-title">Ingredientline</span>';
-
-				    html+='<p style="height:225px;">' + recipeData[i].recipe.ingredientLines + '</p>';
-
-				    html+='</div>';
-
-				    html+='</div>';
-
-				    html+='</div>';
-
-			      
-
-			      
-
-			      
-
-			    }
-
-			    $('#appendDiv').append(html);
-
-			    
-
-			  });
-
-
-
-       		
-
-       		
-
-       		
-
-       	} 
-
-        </script>
+    }
+  </script>
 
 </body>
 

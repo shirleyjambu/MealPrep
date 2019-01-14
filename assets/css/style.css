@@ -42,3 +42,66 @@ h1 {
 }
 
 
+.card-action-right {
+
+  float: right;
+
+}
+
+
+
+
+
+
+
+.card__date {
+
+  background: #08c;
+
+  position: absolute;
+
+  top: 20px;
+
+  right: 20px;
+
+  width: 45px;
+
+  height: 45px;
+
+  border-radius: 50%;
+
+  color: #fff;
+
+  text-align: center;
+
+  line-height: 13px;
+
+  font-weight: bold;
+
+  padding-top: 10px;
+
+}
+
+.card__date__day {
+
+  display: block;
+
+  font-size: 14px;
+
+}
+
+.card__date__month {
+
+  display: block;
+
+  font-size: 10px;
+
+  text-transform: uppercase;
+
+}
+
+li{
+
+display:inline-block;
+
+}
