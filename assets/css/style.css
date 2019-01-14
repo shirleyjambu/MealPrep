@@ -17,10 +17,7 @@ nav{
 }
 
 
-h1{
-  color: rgb(21, 41, 20);
-  font-size: 50px;
-}
+
 .contactBackground{
   background-color: whitesmoke;
 }
@@ -40,7 +37,7 @@ h1 {
   font-family: 'Princess Sofia', cursive;
   text-shadow: 4px 4px 4px rgb(255, 255, 255);
   font-size: 80px;
-  padding-left: 20px;
+  padding-left: 10px;
   
 }
 
