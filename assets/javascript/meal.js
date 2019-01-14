@@ -2,6 +2,17 @@
 var loggedIn = false;
 
 //Intialise DB & Auth
+var config = {
+  apiKey: "AIzaSyDu6OahnJpzNLQbl3aFDi_WssS6-uFPXGw",
+  authDomain: "mealprep-6dc6e.firebaseapp.com",
+  databaseURL: "https://mealprep-6dc6e.firebaseio.com",
+  projectId: "mealprep-6dc6e",
+  storageBucket: "mealprep-6dc6e.appspot.com",
+  messagingSenderId: "1028879243201"
+};
+firebase.initializeApp(config);
+
+var database = firebase.database();
 
 //Functions
 

@@ -6,6 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MealPrep</title>
+   <!-- Firebase link -->
+   <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
+
   <!-- Material Icon CDN -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -17,9 +20,6 @@
 
   <!-- Your custom styles -->
   <link rel="stylesheet" href="./assets/css/style.css">
-
-  <!-- firebase javascript link -->
-  <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
 </head>
 
 <body>
@@ -27,7 +27,8 @@
   <main>
     <!-- Your Code goes here-->
     <div class="card-panel teal white-text lighten-2"><h3 class="center-align">My Kitchen</h3></div>
-
+    <button id="pref">Save My Preferences</button>
+    <form action="" id="myform">
     <ul class="collapsible">
       <li>
         <div class="collapsible-header"><i class="material-icons">filter_drama</i>
@@ -123,12 +124,7 @@
                 <span>Shellfish</span>
               </label>
             </p>
-            <p>
-              <label for="fish">
-                <input id="fish" type="checkbox" />
-                <span>Fish</span>
-              </label>
-            </p>
+            
           </span></div>
       </li>
       <li>
@@ -207,8 +203,7 @@
   </main>
 
   <!--End of your Code-->
-  <!-- Firebase link -->
-  <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
+ 
   <!-- jQuery CDN -->
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
     crossorigin="anonymous"></script>
