@@ -35,3 +35,15 @@ h1{
   background-color: whitesmoke;
   color:darkolivegreen;
 }
+
+.favIcon{
+  color:red;
+}
+
+
+.jumbotronStyle{
+  padding-bottom: '150px';
+  background-color:thistle;
+  background-image:url("../images/kitchen_bg.jpg");
+
+}

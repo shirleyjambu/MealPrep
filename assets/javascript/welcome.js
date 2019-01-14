@@ -9,6 +9,9 @@ var config = {
 };
 firebase.initializeApp(config);
 
+//var database = firebase.database();
+//var trainRef = database.ref("/favs");
+
 // Functions
 
 function getRecipes(food){
@@ -61,20 +64,22 @@ function getRecipeCard(recipe){
   var $card = $("<div>").addClass("card small");
   var $cardImg = $("<div>").addClass("card-image");
   var $img = $("<img>");
-  var $spTitle = $("<span>").addClass("card-title");
+  //var $spTitle = $("<span>").addClass("card-title");
   var $cardInfo = $("<div>").addClass("card-content");
   var $cardAction = $("<div>").addClass("card-action");
-  var $link = $("<a>");
-
+  
   $img.attr("src",recipeImage);
   $img.attr("alt","Alt Text");
   $img.appendTo($cardImg);
   $cardImg.appendTo($card);
 
+  //$spTitle.text("Title").appendTo($card);
+
   $cardInfo.html(`By ${recipeSource}`);
   $cardInfo.appendTo($card);
 
-  $cardAction.html(`<a href='${recipeUrl}' target='_new'>${recipeLabel}<a>`);
+  $cardAction.append(`<a href='${recipeUrl}' target='_new'>${recipeLabel}</a>`);
+  $cardAction.append(`<a href="#"><i class="fas fa-heart favIcon" data-url='${recipeUrl}' data-title='${recipeLabel}'></i></a>`);
 
   $cardAction.appendTo($card);
  
@@ -110,5 +115,14 @@ $(document).ready(function(){
     
     getRecipes(ing);
    
+  });
+
+  // Add to Favorites
+  $(document).on("click",".favIcon",function(){
+    console.log("Add to Favorites");
+    var recipeUrl = $(this).attr("data-url");
+    var recipeTitle = $(this).attr("data-title");
+
+    console.log("url & title : " + recipeUrl + " "+ recipeTitle);
   });
 });
