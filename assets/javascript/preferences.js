@@ -42,7 +42,7 @@ $("#pref").on("click", function getChcked(){
   var prefDetails = getDetails();
   
   var prefData = {"pref":prefDetails};
-    
+  console.log(userId);
   console.log(prefData);
   
 
