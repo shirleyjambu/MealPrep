@@ -1,5 +1,3 @@
-
-
  // Initialize Firebase
  var config = {
   apiKey: "AIzaSyDu6OahnJpzNLQbl3aFDi_WssS6-uFPXGw",
@@ -45,7 +43,7 @@ var uiConfig = {
     // }
   ],
   // Terms of service url.
-  tosUrl: 'welcome.html',
+  //tosUrl: 'welcome.html',
   // Privacy policy url.
  // privacyPolicyUrl: 'trains.html'
 };
