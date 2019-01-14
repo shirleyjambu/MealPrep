@@ -1,217 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
-
+​
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MealPrep</title>
-   <!-- Firebase link -->
-   <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
-
-  <!-- Material Icon CDN -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-  <!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
-  <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
-  <!-- Your custom styles -->
-  <link rel="stylesheet" href="./assets/css/style.css">
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>MealPrep</title>
+  <!-- Firebase link -->
+  <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
+​
+ <!-- Material Icon CDN -->
+ <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+​
+ <!-- Compiled and minified CSS -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+​
+ <!-- Compiled and minified JavaScript -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+​
+ <!-- Your custom styles -->
+ <link rel="stylesheet" href="./assets/css/style.css">
 </head>
-
+​
 <body>
-
-  <main>
-    <!-- Your Code goes here-->
-    <div class="card-panel teal white-text lighten-2"><h3 class="center-align">My Kitchen</h3></div>
-    <button id="pref">Save My Preferences</button>
-    <form action="" id="myform">
-    <ul class="collapsible">
-      <li>
-        <div class="collapsible-header"><i class="material-icons">filter_drama</i>
-          Ingredients I Prefer</div>
-        <div class="collapsible-body"><span>
-            <p>
-              <label for="chicken">
-                <input id="chicken" type="checkbox" />
-                <span>Chicken</span>
-              </label>
-            </p>
-            <p>
-              <label for="tofu">
-                <input id="tofu" type="checkbox" />
-                <span>Tofu</span>
-              </label>
-            </p>
-            <p>
-              <label for="beef">
-                <input id="beef" type="checkbox" />
-                <span>Beef</span>
-              </label>
-            </p>
-            <p>
-              <label for="eggs">
-                <input id="eggs" type="checkbox" />
-                <span>Eggs</span>
-              </label>
-            </p>
-            <p>
-              <label for="salmon">
-                <input id="salmon" type="checkbox" />
-                <span>Salmon</span>
-              </label>
-            </p>
-            <p>
-              <label for="fish">
-                <input id="fish" type="checkbox" />
-                <span>Fish</span>
-              </label>
-            </p>
-            <p>
-              <label for="turkey">
-                <input id="turkey" type="checkbox" />
-                <span>Turkey</span>
-              </label>
-            </p>
-            <p>
-              <label for="venison">
-                <input id="venison" type="checkbox" />
-                <span>Venison</span>
-              </label>
-            </p>
-          </span></div>
-      </li>
-      <li>
-        <div class="collapsible-header"><i class="material-icons">place</i>
-          My Allergies</div>
-        <div class="collapsible-body"><span>
-            <p>
-              <label for="peanuts">
-                <input id="peanuts" type="checkbox" />
-                <span>Peanuts</span>
-              </label>
-            </p>
-            <p>
-              <label for="eggs">
-                <input id="eggs" type="checkbox" />
-                <span>Eggs</span>
-              </label>
-            </p>
-            <p>
-              <label for="gluten">
-                <input id="gluten" type="checkbox" />
-                <span>Gluten</span>
-              </label>
-            </p>
-            <p>
-              <label for="soy">
-                <input id="soy" type="checkbox" />
-                <span>Soy</span>
-              </label>
-            </p>
-            <p>
-              <label for="dairy">
-                <input id="dairy" type="checkbox" />
-                <span>Dairy</span>
-              </label>
-            </p>
-            <p>
-              <label for="shellfish">
-                <input id="shellfish" type="checkbox" />
-                <span>Shellfish</span>
-              </label>
-            </p>
-            
-          </span></div>
-      </li>
-      <li>
-        <div class="collapsible-header" ><i class="material-icons">whatshot</i>My Diets</div>
-        <div class="collapsible-body" ><span>
-            <p>
-              <label for="vegan">
-                <input id="vegan" type="checkbox" />
-                <span>Vegan</span>
-              </label>
-            </p>
-            <p>
-              <label for="vegetarian">
-                <input id="vegetarian" type="checkbox" />
-                <span>Vegetarian</span>
-              </label>
-            </p>
-            <p>
-              <label for="paleo">
-                <input id="paleo" type="checkbox" />
-                <span>Paleo</span>
-              </label>
-            </p>
-            <p>
-              <label for="alcoholFree">
-                <input id="alcoholFree" type="checkbox" />
-                <span>Alcohol Free</span>
-              </label>
-            </p>
-            <p>
-              <label for="highProtein">
-                <input id="highProtein" type="checkbox" />
-                <span>High Protein</span>
-              </label>
-            </p>
-            <p>
-              <label for="lowSodium">
-                <input id="lowSodium" type="checkbox" />
-                <span>Low Sodium</span>
-              </label>
-            </p>
-            <p>
-                <label for="highFiber">
-                  <input id="highFiber" type="checkbox" />
-                  <span>High Fiber</span>
-                </label>
-              </p>
-              <p>
-                <label for="lowFat">
-                  <input id="lowFat" type="checkbox" />
-                  <span>Low Fat</span>
-                </label>
-              </p>
-          </span></div>
-      </li>
-    </ul>
-
-    </form>
-
-    <a id="linkHome" href="index.html">Meal Prep Home</a>
-    <!-- <form class="form">
-      <div class="form-group">
-        <label for="cuisine">Cuisine</label>
-        <input type="text" id="cuisine" classs="form-control">
-      </div>
-
-      <div class="form-group">
-        <label for="diet">Dietary</label>
-        <input type="text" id="diet" classs="form-control">
-      </div>
-
-      <button id="savePreferences" class="btn btn-secondary">Save Preferences</button>
-    </form>
-    </div> -->
-
-  </main>
-
-  <!--End of your Code-->
+​
+ <main>
+  <!-- Your Code goes here-->
+  <div class="card-panel teal white-text lighten-2"><h3 class="center-align">My Kitchen</h3></div>
+  <button id="pref">Save My Preferences</button>
+  <form action="" id="myform">
+  <ul class="collapsible">
+   <li>
+    <div class="collapsible-header"><i class="material-icons">filter_drama</i>
+     Ingredients I Prefer</div>
+    <div class="collapsible-body"><span>
+      <p>
+       <label for="chicken">
+        <input id="chicken" type="checkbox" />
+        <span>Chicken</span>
+       </label>
+      </p>
+      <p>
+       <label for="tofu">
+        <input id="tofu" type="checkbox" />
+        <span>Tofu</span>
+       </label>
+      </p>
+      <p>
+       <label for="beef">
+        <input id="beef" type="checkbox" />
+        <span>Beef</span>
+       </label>
+      </p>
+      <p>
+       <label for="eggs">
+        <input id="eggs" type="checkbox" />
+        <span>Eggs</span>
+       </label>
+      </p>
+      <p>
+       <label for="salmon">
+        <input id="salmon" type="checkbox" />
+        <span>Salmon</span>
+       </label>
+      </p>
+      <p>
+       <label for="fish">
+        <input id="fish" type="checkbox" />
+        <span>Fish</span>
+       </label>
+      </p>
+      <p>
+       <label for="turkey">
+        <input id="turkey" type="checkbox" />
+        <span>Turkey</span>
+       </label>
+      </p>
+      <p>
+       <label for="venison">
+        <input id="venison" type="checkbox" />
+        <span>Venison</span>
+       </label>
+      </p>
+     </span></div>
+   </li>
+   <li>
+    <div class="collapsible-header"><i class="material-icons">place</i>
+     My Allergies</div>
+    <div class="collapsible-body"><span>
+      <p>
+       <label for="peanuts">
+        <input id="peanuts" type="checkbox" />
+        <span>Peanuts</span>
+       </label>
+      </p>
+      <p>
+       <label for="eggs">
+        <input id="eggs" type="checkbox" />
+        <span>Eggs</span>
+       </label>
+      </p>
+      <p>
+       <label for="gluten">
+        <input id="gluten" type="checkbox" />
+        <span>Gluten</span>
+       </label>
+      </p>
+      <p>
+       <label for="soy">
+        <input id="soy" type="checkbox" />
+        <span>Soy</span>
+       </label>
+      </p>
+      <p>
+       <label for="dairy">
+        <input id="dairy" type="checkbox" />
+        <span>Dairy</span>
+       </label>
+      </p>
+      <p>
+       <label for="shellfish">
+        <input id="shellfish" type="checkbox" />
+        <span>Shellfish</span>
+       </label>
+      </p>
+      
+     </span></div>
+   </li>
+   <li>
+    <div class="collapsible-header" ><i class="material-icons">whatshot</i>My Diets</div>
+    <div class="collapsible-body" ><span>
+      <p>
+       <label for="vegan">
+        <input id="vegan" type="checkbox" />
+        <span>Vegan</span>
+       </label>
+      </p>
+      <p>
+       <label for="vegetarian">
+        <input id="vegetarian" type="checkbox" />
+        <span>Vegetarian</span>
+       </label>
+      </p>
+      <p>
+       <label for="paleo">
+        <input id="paleo" type="checkbox" />
+        <span>Paleo</span>
+       </label>
+      </p>
+      <p>
+       <label for="alcoholFree">
+        <input id="alcoholFree" type="checkbox" />
+        <span>Alcohol Free</span>
+       </label>
+      </p>
+      <p>
+       <label for="highProtein">
+        <input id="highProtein" type="checkbox" />
+        <span>High Protein</span>
+       </label>
+      </p>
+      <p>
+       <label for="lowSodium">
+        <input id="lowSodium" type="checkbox" />
+        <span>Low Sodium</span>
+       </label>
+      </p>
+      <p>
+        <label for="highFiber">
+         <input id="highFiber" type="checkbox" />
+         <span>High Fiber</span>
+        </label>
+       </p>
+       <p>
+        <label for="lowFat">
+         <input id="lowFat" type="checkbox" />
+         <span>Low Fat</span>
+        </label>
+       </p>
+     </span></div>
+   </li>
+  </ul>
+​
+  </form>
+​
+  <a id="linkHome" href="index.html">Meal Prep Home</a>
+  <!-- <form class="form">
+   <div class="form-group">
+    <label for="cuisine">Cuisine</label>
+    <input type="text" id="cuisine" classs="form-control">
+   </div>
+​
+   <div class="form-group">
+    <label for="diet">Dietary</label>
+    <input type="text" id="diet" classs="form-control">
+   </div>
+​
+   <button id="savePreferences" class="btn btn-secondary">Save Preferences</button>
+  </form>
+  </div> -->
+​
+ </main>
+​
+ <!--End of your Code-->
  
-  <!-- jQuery CDN -->
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-    crossorigin="anonymous"></script>
-  <!-- Materialize JS CDN -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-
-  <script src="./assets/javascript/preferences.js"></script>
-
+ <!-- jQuery CDN -->
+ <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+ <!-- Materialize JS CDN -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+​
+ <script src="./assets/javascript/preferences.js"></script>
+​
 </body>
-
+​
 </html>

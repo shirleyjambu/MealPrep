@@ -11,31 +11,47 @@
   firebase.initializeApp(config);
 
 
-  // Create a variable to reference the database
-  var database = firebase.database();
+// Create a variable to reference the database
+var database = firebase.database();
+var userRef = database.ref("/Users");
 
 var userName = "";
 var favoriteIngredients = [];
 var allergy = [];
 var diet = [];
 
-$("#pref").on("click", function getChcked(){
+//Function
+
+function getDetails(){
   var form = document.getElementById('myform');
   var chks = form.querySelectorAll('input[type="checkbox"]');
   var checked = [];
   for(var i = 0; i < chks.length; i++){
       if(chks[i].checked){
           checked.push(chks[i].id);
-          console.log(checked);
-      }
+        }
   }
-  console.log(checked.id);
+  console.log(checked);
   return checked;
+}
+
+$("#pref").on("click", function getChcked(){
+  console.log("Id : " + firebase.auth().currentUser.uid);
+  console.log("Email : " + firebase.auth().currentUser.email);
+  var userId = firebase.auth().currentUser.uid;
+  var prefDetails = getDetails();
   
+  var prefData = {"pref":prefDetails};
+    
+  console.log(prefData);
+  
+
+  userRef.push(prefData);
+//  document.getElementById("myForm").reset();
 
 })
 
-database.ref().set (checked)
+
 //   function writeUserData(userId, name, email, imageUrl) {
 //     firebase.database().ref('users/' + userId).set({
 //       username: name,
@@ -46,3 +62,52 @@ database.ref().set (checked)
 
  
 // }
+
+  // // Initial Values
+  // var name = "";
+  // var email = "";
+  // var age = 0;
+  // var comment = "";
+
+  // // Capture Button Click
+  // $("#add-user").on("click", function (event) {
+  //   // Don't refresh the page!
+  //   event.preventDefault();
+
+  //   // YOUR TASK!!!
+  //   // Code in the logic for storing and retrieving the most recent user.
+  //   // Don't forget to provide initial data to your Firebase database.
+  //   name = $("#name-input").val().trim();
+  //   email = $("#email-input").val().trim();
+  //   age = $("#age-input").val().trim();
+  //   comment = $("#comment-input").val().trim();
+
+  //   database.ref().set({
+  //     name: name,
+  //     email: email,
+  //     age: age,
+  //     comment: comment
+  //   });
+
+  // });
+
+  //     // Firebase watcher + initial loader HINT: .on("value")
+  //     database.ref().on("value", function(snapshot) {
+
+  //       // Log everything that's coming out of snapshot
+  //       console.log(snapshot.val());
+  //       console.log(snapshot.val().name);
+  //       console.log(snapshot.val().email);
+  //       console.log(snapshot.val().age);
+  //       console.log(snapshot.val().comment);
+  
+  //       // Change the HTML to reflect
+  //       $("#name-display").text(snapshot.val().name);
+  //       $("#email-display").text(snapshot.val().email);
+  //       $("#age-display").text(snapshot.val().age);
+  //       $("#comment-display").text(snapshot.val().comment);
+  
+  //       // Handle the errors
+  //     }, function(errorObject) {
+  //       console.log("Errors handled: " + errorObject.code);
+  //     });
