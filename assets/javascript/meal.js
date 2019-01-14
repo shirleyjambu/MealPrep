@@ -4,6 +4,7 @@ var loggedIn = false;
 //Intialise DB & Auth
 
 //Functions
+
 function checkValidUser(userName,password){
   if(userName === "a" && password === "b"){
     loggedIn = true;
@@ -13,7 +14,8 @@ function checkValidUser(userName,password){
   return loggedIn;
 }
 
-//Event Handlers
+
+
 $("#login-btn").on("click",function(){
   // Authentication code in here
   var userName = $("#userName").val().trim();

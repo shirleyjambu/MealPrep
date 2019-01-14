@@ -41,3 +41,14 @@ h1{
 #prefForm{
   padding: 25px;
 }
+.favIcon{
+  color:red;
+}
+
+
+.jumbotronStyle{
+  padding-bottom: '150px';
+  background-color:thistle;
+  background-image:url("../images/kitchen_bg.jpg");
+
+}
