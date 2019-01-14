@@ -115,3 +115,7 @@ li{
 display:inline-block;
 
 }
+
+.my-collapsible-header{
+  min-width: 100%;
+}

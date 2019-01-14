@@ -86,11 +86,16 @@ function getRecipeCard(recipe){
   return $card;
 }
 
+function getUserNameFromEmail(email){
+  var ind = email.indexOf("@");
+  var uName = email.substr(0,ind);
+  return uName;
+}
 
 //Listeners
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
-    var userName = user.name?user.name:user.email;
+    var userName = getUserNameFromEmail(user.email);
     $("#loggedUser").text(userName);
   } else {
     console.log("NOT Logged USER");
