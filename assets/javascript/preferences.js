@@ -13,12 +13,8 @@
 
 // Create a variable to reference the database
 var database = firebase.database();
-//var mpRef = database.ref("/MP");
-console.log("Id : " + firebase.auth().currentUser);
-//console.log("Email : " + firebase.auth().currentUser.email);
-
-//var userName = getUserNameFromEmail(firebase.auth().currentUser.email);
-var userRef = database.ref("/elbe");
+var userName = localStorage.getItem("mpUserName");
+var userRef = database.ref("/"+userName+"/pref");
 
 var userName = "";
 var favoriteIngredients = [];
@@ -48,12 +44,10 @@ function getUserNameFromEmail(email){
 
 $("#pref").on("click", function getChcked(){
   var prefDetails = getDetails();
-  console.log("prefData : " + prefDetails.length);
-  var prefData = {"pref":prefDetails};
-  console.log(userId);
+  
+  var prefData = {prefDetails};
   console.log(prefData);
   
-
   userRef.push(prefData);
 //  document.getElementById("myForm").reset();
 
