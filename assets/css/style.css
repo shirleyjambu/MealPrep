@@ -107,7 +107,7 @@ nav{
 main{
   color:rgb(43, 54, 35);
   font-family: 'Handlee', cursive;
-  font-weight: bold;
+  
   
  
 }
@@ -130,10 +130,11 @@ h1 {
 }
 
 #pref{
-  background-color: rgb(58, 57, 57);
+  background-color: rgba(58, 57, 57, 0.61);
+  
 }
 label {
-  font-weight: bold;
+  color: whitesmoke;
 }
 
 
@@ -141,10 +142,12 @@ label {
 .collapsible-header{
   background-color: rgb(231, 229, 229);
   
+  
 }
 #prefBar {
   background-color: rgba(116, 113, 113, 0.712);
   color: whitesmoke;
+  font-size: bold;
 }
 
 
