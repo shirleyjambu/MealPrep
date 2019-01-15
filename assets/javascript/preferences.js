@@ -37,14 +37,7 @@ function getAllDetails(){
   var form = document.getElementById('myform');
   var chks = form.querySelectorAll('input[type="checkbox"]');
   var allCb = {};
-  
-  var item1 = {
-    chicken:true
-  };
-  var item2 = {
-    eggs:false
-  };
-  //{chicken:true,eggs:false};
+    
   for(var i = 0; i < chks.length; i++){
       if(chks[i].checked){
           allCb[chks[i].id] = true;

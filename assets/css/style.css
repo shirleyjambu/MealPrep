@@ -3,35 +3,29 @@
   background-image: url("../images/bowl.jpg");
   background-size: 100%;
 }
-
 .my-container{ 
   width: 90%;
 }
-
 h1 {
   font-family: 'Princess Sofia', cursive;
   text-shadow: 4px 4px 4px rgb(255, 255, 255);
   font-size: 80px;
   padding-left: 10px;
   color:rgb(43, 54, 35);
-}
 
+}
 #prefBody {
   background-image: url("../images/chopping.jpg");
   background-size: 100%;
 }
 /* Home Page */
-
-
 /* Welcome User */
 .favIcon{
   color:red;
 }
-
 .chip a{
   color:red;
 }
-
 /* Recipes */
 .card-action-right {
   float: right;
@@ -51,7 +45,6 @@ h1 {
   font-weight: bold;
   padding-top: 10px;
 }
-
 .card__date__day {
   display: block;
   font-size: 14px;
@@ -66,21 +59,15 @@ h1 {
 #prefForm{
   padding: 25px;
 }
-
-
 /* Contact */
-
-
 /* Please check these and put in respective placeholders */
 nav{
   background-color:whitesmoke;
   color: black;
 }
-
 .page-footer{
   background-color:whitesmoke;
 }
-
 .contactBackground{
   background-color: whitesmoke;
 }
@@ -107,12 +94,8 @@ nav{
 main{
   color:rgb(43, 54, 35);
   font-family: 'Handlee', cursive;
-  font-weight: bold;
-  
- 
+
 }
-
-
 
 /* pref page style */
 #prefForm{
@@ -130,14 +113,12 @@ h1 {
 }
 
 #pref{
-  background-color: rgb(58, 57, 57);
+  background-color: rgba(58, 57, 57, 0.61);
+  
 }
 label {
-  font-weight: bold;
+  color: whitesmoke;
 }
-
-
-
 .collapsible-header{
   background-color: rgb(231, 229, 229);
   
@@ -145,7 +126,7 @@ label {
 #prefBar {
   background-color: rgba(116, 113, 113, 0.712);
   color: whitesmoke;
+
+  font-size: bold;
 }
-
-
 
