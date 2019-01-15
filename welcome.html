@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
  <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,71 +9,79 @@
    <!-- Material Icon CDN -->
    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
-   
+
    <!-- Materialize CSS CDN -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Princess Sofia:400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Princess Sofia:400,700" rel="stylesheet">
 
-   <!-- Firebase Reference -->
-   <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
-   <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
-   <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
+    <!-- Firebase Reference -->
+    <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
 
-   <!-- Your custom styles -->
-   <link rel="stylesheet" href="./assets/css/style.css">
- </head>
- <body>
-        <div class="card-panel grey lighten-2 jumbotronStyle">
-        
+    <!-- Your custom styles -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+
+<body id="welBody">
+
+    <header id=welHead>
+        <div class="card-panel jumbotronStyle" id="welDiv">
+
+                    <a href="preferences.html" class="waves-effect waves-light btn"><i class="material-icons left">local_activity</i>Preference</a>
+
+                    <a href="index.html" class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>Logout<
+
             <div>
-                <h1>Mortar & Pestle</h1>
-                <p> Welcome <span id="loggedUser"></span>
+                <a href="index.html">
+                    <h1>Mortar & Pestle</h1>
+                </a>
+                <p> Welcome <span id="loggedUser"></span></p>
 
-                    <a href="preferences.html"><a class="waves-effect waves-light btn"><i class="material-icons left">local_activity</i>Preference</a>
-
-                    <a href="index.html"><a class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>Logout</a>
-
-
-                </p>
+                <a href="index.html"><a class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>Logout</a>
             </div>
-        </img>
 
-    <header>
 
     </header>
-   <main>
-   <!-- Your Code goes here-->
-   <div class="container">
-       <!-- Favorites-->
-       Favorites
-       
-       <div id="favs">
-         
-       </div>
-        <!-- form -->
-        <form>
-            <div class="input-field">
-                <input placeholder="Enter Ingredient" id="ingredient" type="text" class="validate">
-                <button type="submit" id="searchbyIng">Quick Search by Ingredient</button>
-            </div>
-        </form>
-        
-        <!-- Recipes-->
-        <div class="row" id="recipes"></div>
-   </div>
-    
-   <!--End of your Code-->
-   </main>
+    <main>
+        <a href="preferences.html" class="waves-effect waves-light btn"><i class="material-icons left">local_activity</i>Preference</a>
 
-   <!-- jQuery CDN -->
-   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-   <!-- Materialize JS CDN -->
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-   <script src="./assets/javascript/welcome.js"></script>
-   <script>
-     $(document).ready(function(){
-        $('.carousel').carousel();
-    });   
-   </script>
+
+        <!-- Your Code goes here-->
+        <div class="container" id="welContainer">
+            <!-- Favorites-->
+            Favorites
+
+            <div id="favs">
+
+            </div>
+            <!-- form -->
+            <form>
+                <div class="input-field">
+                    <input placeholder="Enter Ingredient" id="ingredient" type="text" class="validate">
+                    <button type="submit" id="searchbyIng">Quick Search by Ingredient</button>
+                </div>
+            </form>
+
+            <!-- Recipes-->
+            <div class="row" id="recipes"></div>
+        </div>
+
+        <!--End of your Code-->
+    </main>
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+    <!-- Materialize JS CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="./assets/javascript/welcome.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.carousel').carousel();
+        });
+    </script>
 </body>
+
 </html>
