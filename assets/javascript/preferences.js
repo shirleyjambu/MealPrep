@@ -14,14 +14,11 @@
 // Create a variable to reference the database
 var database = firebase.database();
 var userName = localStorage.getItem("mpUserName");
-var userRef = database.ref("/"+userName+"/pref");
+var prefRef = database.ref("/"+userName+"/pref");
 
-var userName = "";
-var favoriteIngredients = [];
-var allergy = [];
-var diet = [];
+var preferenceKey = "";
 
-//Function
+//Functions
 
 function getDetails(){
   var form = document.getElementById('myform');
@@ -36,80 +33,48 @@ function getDetails(){
   return checked;
 }
 
-function getUserNameFromEmail(email){
-  var ind = email.indexOf("@");
-  var uName = email.substr(0,ind);
-  return uName;
+function getAllDetails(){
+  var form = document.getElementById('myform');
+  var chks = form.querySelectorAll('input[type="checkbox"]');
+  var allCb = {};
+  
+  var item1 = {
+    chicken:true
+  };
+  var item2 = {
+    eggs:false
+  };
+  //{chicken:true,eggs:false};
+  for(var i = 0; i < chks.length; i++){
+      if(chks[i].checked){
+          allCb[chks[i].id] = true;
+        }else{
+          allCb[chks[i].id] = false;
+        }
+    }
+  console.log(allCb);
+  return allCb;
 }
 
-$("#pref").on("click", function getChcked(){
-  var prefDetails = getDetails();
+function setPreferences(prefObj){
+  for(var key in prefObj){
+    if(prefObj[key]===true){
+      $("#"+key).attr("checked",true);
+    }
+  }
+}
+
+// Event Handlers
+$("#pref").on("click", function(){
   
-  var prefData = {prefDetails};
-  console.log(prefData);
-  
-  userRef.push(prefData);
-//  document.getElementById("myForm").reset();
+  var prefData = getAllDetails();
+  prefRef.push(prefData);
 
 })
 
-
-//   function writeUserData(userId, name, email, imageUrl) {
-//     firebase.database().ref('users/' + userId).set({
-//       username: name,
-//       email: email,
-//       profile_picture : imageUrl
-//     });
-//   }
-
- 
-// }
-
-  // // Initial Values
-  // var name = "";
-  // var email = "";
-  // var age = 0;
-  // var comment = "";
-
-  // // Capture Button Click
-  // $("#add-user").on("click", function (event) {
-  //   // Don't refresh the page!
-  //   event.preventDefault();
-
-  //   // YOUR TASK!!!
-  //   // Code in the logic for storing and retrieving the most recent user.
-  //   // Don't forget to provide initial data to your Firebase database.
-  //   name = $("#name-input").val().trim();
-  //   email = $("#email-input").val().trim();
-  //   age = $("#age-input").val().trim();
-  //   comment = $("#comment-input").val().trim();
-
-  //   database.ref().set({
-  //     name: name,
-  //     email: email,
-  //     age: age,
-  //     comment: comment
-  //   });
-
-  // });
-
-  //     // Firebase watcher + initial loader HINT: .on("value")
-  //     database.ref().on("value", function(snapshot) {
-
-  //       // Log everything that's coming out of snapshot
-  //       console.log(snapshot.val());
-  //       console.log(snapshot.val().name);
-  //       console.log(snapshot.val().email);
-  //       console.log(snapshot.val().age);
-  //       console.log(snapshot.val().comment);
-  
-  //       // Change the HTML to reflect
-  //       $("#name-display").text(snapshot.val().name);
-  //       $("#email-display").text(snapshot.val().email);
-  //       $("#age-display").text(snapshot.val().age);
-  //       $("#comment-display").text(snapshot.val().comment);
-  
-  //       // Handle the errors
-  //     }, function(errorObject) {
-  //       console.log("Errors handled: " + errorObject.code);
-  //     });
+// Listeners
+prefRef.on("child_added",function (prefSnapshot) {
+  setPreferences(prefSnapshot.val());
+  preferenceKey = prefSnapshot.val().key;
+  console.log("preferenceKey :" + preferenceKey);
+});
