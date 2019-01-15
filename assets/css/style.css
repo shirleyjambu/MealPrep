@@ -1,3 +1,4 @@
+/* common styles*/
 #homebody{
   background-image: url("../images/bowl.jpg");
   background-size: 100%;
@@ -7,6 +8,34 @@
   width: 90%;
 }
 
+h1 {
+  font-family: 'Princess Sofia', cursive;
+  text-shadow: 4px 4px 4px rgb(255, 255, 255);
+  font-size: 80px;
+  padding-left: 10px;
+}
+
+
+/* Home Page */
+
+
+/* Welcome User */
+.favIcon{
+  color:red;
+}
+
+/* Recipes */
+
+/* Preferences*/
+#prefForm{
+  padding: 25px;
+}
+
+
+/* Contact */
+
+
+/* Please check these and put in respective placeholders */
 nav{
   background-color:whitesmoke;
   color: black;
@@ -16,14 +45,8 @@ nav{
   background-color:whitesmoke;
 }
 
-
-
 .contactBackground{
   background-color: whitesmoke;
-}
-
-#linkHome{
-  padding-left: 5%;
 }
 
 .card{
@@ -33,7 +56,7 @@ nav{
   color:darkolivegreen;
 }
 
-<<<<<<< HEAD
+
 
 /* pref page style */
 #prefForm{
@@ -41,82 +64,49 @@ nav{
 }
 .favIcon{
   color:red;
-=======
+}
 h1 {
   font-family: 'Princess Sofia', cursive;
   text-shadow: 4px 4px 4px rgb(255, 255, 255);
   font-size: 80px;
   padding-left: 10px;
   
->>>>>>> 3a30d75b978c6672382eb3bc2d50b4ea6a42617f
+
 }
 
   
 
 .card-action-right {
-
   float: right;
-
 }
 
-
-
-
-
-
-
 .card__date {
-
   background: #08c;
-
   position: absolute;
-
   top: 20px;
-
   right: 20px;
-
   width: 45px;
-
   height: 45px;
-
   border-radius: 50%;
-
   color: #fff;
-
   text-align: center;
-
   line-height: 13px;
-
   font-weight: bold;
-
   padding-top: 10px;
-
 }
 
 .card__date__day {
-
   display: block;
-
   font-size: 14px;
-
 }
 
 .card__date__month {
-
   display: block;
-
   font-size: 10px;
-
   text-transform: uppercase;
-
 }
 
-li{
+/*li{
+  display:inline-block;
+}*/
 
-display:inline-block;
-
-}
-
-.my-collapsible-header{
-  min-width: 100%;
-}

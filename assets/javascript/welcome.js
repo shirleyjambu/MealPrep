@@ -9,8 +9,9 @@ var config = {
 };
 firebase.initializeApp(config);
 
-//var database = firebase.database();
-//var trainRef = database.ref("/favs");
+var database = firebase.database();
+var userName = localStorage.getItem("mpUserName");
+var userRef = database.ref("/"+userName+"/favs");
 
 // Functions
 
@@ -96,6 +97,7 @@ function getUserNameFromEmail(email){
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     var userName = getUserNameFromEmail(user.email);
+    localStorage.setItem("mpUserName",userName);
     $("#loggedUser").text(userName);
   } else {
     console.log("NOT Logged USER");
@@ -128,6 +130,10 @@ $(document).ready(function(){
     var recipeUrl = $(this).attr("data-url");
     var recipeTitle = $(this).attr("data-title");
 
-    console.log("url & title : " + recipeUrl + " "+ recipeTitle);
+    console.log("url & title : " + recipeUrl + " " + recipeTitle);
+    var favData = {"favs":recipeUrl};
+    
+    console.log(favData);
+    userRef.push(favData);
   });
 });
