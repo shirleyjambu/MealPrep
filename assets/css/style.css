@@ -32,6 +32,24 @@ h1 {
   color:red;
 }
 
+#welDiv
+ {
+  background-color: transparent;
+  background-size: 92%;
+  font-family: 'Handlee', cursive;
+  font-weight: bold;
+  
+}
+#welBody {
+  background-image: url("../images/boards-brown.jpg");
+  background-size: 100%;
+}
+#welHead {
+  background-color: transparent;
+  color: rgb(15, 15, 15);
+}
+
+
 /* Recipes */
 .card-action-right {
   float: right;
@@ -93,17 +111,7 @@ nav{
   font-family: 'Handlee', cursive;
  
 }
-#myKitchen {
-  font-family: 'Princess Sofia', cursive;
-  background-color: transparent;
-  background-size: 100%;
-  color: rgb(116, 112, 112);
-  text-shadow:4px 4px 4px rgb(242, 247, 239);
-  font-size: 75px;
-  
-  
-  
-}
+
 main{
   color:rgb(43, 54, 35);
   font-family: 'Handlee', cursive;
@@ -150,5 +158,15 @@ label {
   font-size: bold;
 }
 
-
+#myKitchen {
+  font-family: 'Princess Sofia', cursive;
+  background-color: transparent;
+  background-size: 100%;
+  color: rgb(143, 140, 140);
+  text-shadow:4px 4px 4px rgb(40, 66, 26);
+  font-size: 75px;
+  
+  
+  
+}
 
