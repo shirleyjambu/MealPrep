@@ -18,6 +18,8 @@
   <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
   <link rel="stylesheet" href="./assets/css/style.css">
   <style>
+
+
     .card-title {
       display: inline-block;
       width: 100%;
@@ -73,6 +75,7 @@
 
       <li><a href="#" onclick="menu_click(this)">American</a></li>
       <li><a href="#" onclick="menu_click(this)">Mexican</a></li>
+      <li><a href="#" onclick="menu_click(this)">Indian</a></li>
       <li><a href="#" onclick="menu_click(this)">Italian</a></li>
       <li><a href="#" onclick="menu_click(this)">Chinese</a></li>
       <li><a href="#" onclick="menu_click(this)">Japanese</a></li>
@@ -178,6 +181,7 @@
           $('#appendDiv').empty();
 
           var html = '';
+          
 
           for (var i = 0; i < recipeData.length; i++) {
 
@@ -190,9 +194,9 @@
             html += '<div class="content-overlay">';
             html += '</div>';
             html += '</div>';
-            html += '<span class="card-title"><a href="' + recipeData[i].recipe.url + '" style="color:#fff;">' +
-              recipeData[i].recipe.url + '</a></span>';
-            html += '<p style="height:170px;overflow-y:auto;">' + recipeData[i].recipe.ingredientLines + '</p>';
+            html += '<span class="card-title blue-text text-darken-2"><a href="' + recipeData[i].recipe.url + '" style="color:#fff;">' +
+              recipeData[i].recipe.label + '</a></span>';
+            html += '<p style="height:170px;overflow-y:auto;" >' + recipeData[i].recipe.ingredientLines + '</p>';
             html += '</div>';
             html += '</div>';
             html += '</div>';
@@ -294,6 +298,11 @@
 
           var html = '';
 
+          function lineBreak() {
+          var res = str.split(",").join("<br>")
+          document.getElementById("demo").innerHTML = res;
+          }
+
           for (var i = 0; i < recipeData.length; i++) {
 
             console.log("Inside Recipes : " + recipeData[i].recipe.image);
@@ -305,12 +314,12 @@
             html += '<div class="content-overlay">';
             html += '</div>';
             html += '</div>';
-            html += '<span class="card-title"><a href="' + recipeData[i].recipe.url + '" style="color:#fff;">' +
-              recipeData[i].recipe.url + '</a></span>';
-            html += '<p style="height:170px;overflow-y:auto;">' + recipeData[i].recipe.ingredientLines + '</p>';
+            html += '<span class="card-title blue-text text-darken-2"><a href="' + recipeData[i].recipe.url + '" style="color:#fff;">' +
+              recipeData[i].recipe.label + '</a></span>';
+            html += '<p style="height:170px;overflow-y:auto;" id="demo">' + lineBreak.recipeData[i].recipe.ingredientLines + '</p>';
             html += '</div>';
             html += '</div>';
-            html += '</div>';
+            html += '</div>'; 
           }
           $('#appendDiv').append(html);
           foods = [];
