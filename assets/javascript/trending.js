@@ -21,7 +21,7 @@ function getTrendingDataFromApi(food){
       console.log("No of Recipes : " + recipeData.length);
 
       var $card = getRecipeCard(recipeData);
-      $("#trendingRecipe").append("CARD CONTENT");
+      $("#trendingRecipe").append("eggs");
       //$("#trendingRecipe").append($card);
       //return recipeData;
       
