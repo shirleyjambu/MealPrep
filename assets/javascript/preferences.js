@@ -35,21 +35,26 @@ function getDetails(){
   return checked;
 }
 
-$("#pref").on("click", function getChcked(){
-  console.log("Id : " + firebase.auth().currentUser.uid);
-  console.log("Email : " + firebase.auth().currentUser.email);
-  var userId = firebase.auth().currentUser.uid;
-  var prefDetails = getDetails();
-  
-  var prefData = {"pref":prefDetails};
-  
-  console.log(prefData);
-  
+function getAllDetails(){
+  var form = document.getElementById('myform');
+  var chks = form.querySelectorAll('input[type="checkbox"]');
+  var allCb = {};
+    
+  for(var i = 0; i < chks.length; i++){
+      if(chks[i].checked){
+          allCb[chks[i].id] = true;
+        }else{
+          allCb[chks[i].id] = false;
+        }
+    }
+  console.log(allCb);
+  return allCb;
+}
 
   userRef.push(prefData);
 //  document.getElementById("myForm").reset();
 
-})
+
 
 database.ref().on("value", function(snapshot) {
   // storing the snapshot.val() in a variable for convenience

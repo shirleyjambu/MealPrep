@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
   ​
   <head>
     <meta charset="UTF-8" />
@@ -186,6 +187,198 @@
       </form>
       ​ <a id="linkHome" href="index.html">Meal Prep Home</a>
       <!-- <form class="form">
+=======
+​
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>MealPrep</title>
+  <!-- Firebase link -->
+  <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
+​
+ <!-- Material Icon CDN -->
+ <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+​
+ <!-- Compiled and minified CSS -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+​
+ <!-- Compiled and minified JavaScript -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+ <link href="https://fonts.googleapis.com/css?family=Princess Sofia|Handlee:400,700" rel="stylesheet" />
+​
+ <!-- Your custom styles -->
+ <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+​
+<body id="prefBody">
+​
+ <main>
+  <!-- Your Code goes here-->
+  <div class="card-panel" id="myKitchen"><p class="text-left">Mortal & Pestle</p></div>
+ 
+  <form action="" id="myform">
+  <ul class="collapsible">
+   <li>
+    <div class="collapsible-header" id="prefBar" ><i class="material-icons">edit</i>
+     Ingredients I Prefer</div>
+    <div class="collapsible-body"><span>
+      <p>
+       <label for="chicken">
+        <input id="chicken" type="checkbox" />
+        <span>Chicken</span>
+       </label>
+      </p>
+      <p>
+       <label for="tofu">
+        <input id="tofu" type="checkbox" />
+        <span>Tofu</span>
+       </label>
+      </p>
+      <p>
+       <label for="beef">
+        <input id="beef" type="checkbox" />
+        <span>Beef</span>
+       </label>
+      </p>
+      <p>
+       <label for="eggs">
+        <input id="eggs" type="checkbox" />
+        <span>Eggs</span>
+       </label>
+      </p>
+      <p>
+       <label for="salmon">
+        <input id="salmon" type="checkbox" />
+        <span>Salmon</span>
+       </label>
+      </p>
+      <p>
+       <label for="fish">
+        <input id="fish" type="checkbox" />
+        <span>Fish</span>
+       </label>
+      </p>
+      <p>
+       <label for="turkey">
+        <input id="turkey" type="checkbox" />
+        <span>Turkey</span>
+       </label>
+      </p>
+      <p>
+       <label for="venison">
+        <input id="venison" type="checkbox" />
+        <span>Venison</span>
+       </label>
+      </p>
+     </span></div>
+   </li>
+   <li>
+    <div class="collapsible-header" id="prefBar"><i class="material-icons">edit</i>
+     My Allergies</div>
+    <div class="collapsible-body"><span>
+      <p>
+       <label for="peanuts">
+        <input id="peanuts" type="checkbox" />
+        <span>Peanuts</span>
+       </label>
+      </p>
+      <p>
+       <label for="eggs">
+        <input id="eggs" type="checkbox" />
+        <span>Eggs</span>
+       </label>
+      </p>
+      <p>
+       <label for="gluten">
+        <input id="gluten" type="checkbox" />
+        <span>Gluten</span>
+       </label>
+      </p>
+      <p>
+       <label for="soy">
+        <input id="soy" type="checkbox" />
+        <span>Soy</span>
+       </label>
+      </p>
+      <p>
+       <label for="dairy">
+        <input id="dairy" type="checkbox" />
+        <span>Dairy</span>
+       </label>
+      </p>
+      <p>
+       <label for="shellfish">
+        <input id="shellfish" type="checkbox" />
+        <span>Shellfish</span>
+       </label>
+      </p>
+      
+     </span></div>
+   </li>
+   <li>
+    <div class="collapsible-header" id="prefBar"><i class="material-icons">edit</i>My Diets</div>
+    <div class="collapsible-body" ><span>
+      <p>
+       <label for="vegan">
+        <input id="vegan" type="checkbox" />
+        <span>Vegan</span>
+       </label>
+      </p>
+      <p>
+       <label for="vegetarian">
+        <input id="vegetarian" type="checkbox" />
+        <span>Vegetarian</span>
+       </label>
+      </p>
+      <p>
+       <label for="paleo">
+        <input id="paleo" type="checkbox" />
+        <span>Paleo</span>
+       </label>
+      </p>
+      <p>
+       <label for="alcoholFree">
+        <input id="alcoholFree" type="checkbox" />
+        <span>Alcohol Free</span>
+       </label>
+      </p>
+      <p>
+       <label for="highProtein">
+        <input id="highProtein" type="checkbox" />
+        <span>High Protein</span>
+       </label>
+      </p>
+      <p>
+       <label for="lowSodium">
+        <input id="lowSodium" type="checkbox" />
+        <span>Low Sodium</span>
+       </label>
+      </p>
+      <p>
+        <label for="highFiber">
+         <input id="highFiber" type="checkbox" />
+         <span>High Fiber</span>
+        </label>
+       </p>
+       <p>
+        <label for="lowFat">
+         <input id="lowFat" type="checkbox" />
+         <span>Low Fat</span>
+        </label>
+       </p>
+     </span></div>
+   </li>
+  </ul>
+​ <a class="waves-effect waves-ripple btn" id="pref"><i class="material-icons right">send</i>Save My Preferences</a>
+  </form>
+​<br>
+
+  <a id="linkHome" href="index.html">Mortar & Pestle</a>
+  <!-- <form class="form">
+>>>>>>> 392ca045172cf53423eae436ca26f3bcf0af8e9d
    <div class="form-group">
     <label for="cuisine">Cuisine</label>
     <input type="text" id="cuisine" classs="form-control">
