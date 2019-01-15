@@ -65,16 +65,24 @@ function setPreferences(prefObj){
 }
 
 // Event Handlers
+
+//Save or Update Preferences
 $("#pref").on("click", function(){
-  
   var prefData = getAllDetails();
-  prefRef.push(prefData);
+  if(preferenceKey === ""){
+    prefRef.push(prefData);
+  }else{
+    database.ref("/"+userName+"/pref/" + preferenceKey).update(prefData);
+  }
+  
 
 })
 
 // Listeners
 prefRef.on("child_added",function (prefSnapshot) {
+  //Set the key, as global var for update
+  preferenceKey = prefSnapshot.key;
+  
   setPreferences(prefSnapshot.val());
-  preferenceKey = prefSnapshot.val().key;
-  console.log("preferenceKey :" + preferenceKey);
+  
 });
