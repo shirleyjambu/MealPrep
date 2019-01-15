@@ -31,15 +31,15 @@ h1 {
 
 #welDiv
  {
-  background-color: transparent;
-  background-size: 92%;
+  background-image: url("../images/bunch.jpg");
+  background-size: 100%;
   font-family: 'Handlee', cursive;
   font-weight: bold;
   
 }
 #welBody {
-  background-image: url("../images/boards-brown.jpg");
-  background-size: 100%;
+  background-color: rgb(238, 233, 226);
+  
 }
 #welHead {
   background-color: transparent;
