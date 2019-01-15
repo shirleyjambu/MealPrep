@@ -3,19 +3,17 @@
   background-image: url("../images/bowl.jpg");
   background-size: 100%;
 }
-
 .my-container{ 
   width: 90%;
 }
-
 h1 {
   font-family: 'Princess Sofia', cursive;
   text-shadow: 4px 4px 4px rgb(255, 255, 255);
   font-size: 80px;
   padding-left: 10px;
   color:rgb(43, 54, 35);
-}
 
+}
 #prefBody {
   background-image: url("../images/chopping.jpg");
   background-size: 100%;
@@ -27,7 +25,6 @@ h1 {
 .favIcon{
   color:red;
 }
-
 .chip a{
   color:red;
 }
@@ -69,7 +66,6 @@ h1 {
   font-weight: bold;
   padding-top: 10px;
 }
-
 .card__date__day {
   display: block;
   font-size: 14px;
@@ -84,21 +80,15 @@ h1 {
 #prefForm{
   padding: 25px;
 }
-
-
 /* Contact */
-
-
 /* Please check these and put in respective placeholders */
 nav{
   background-color:whitesmoke;
   color: black;
 }
-
 .page-footer{
   background-color:whitesmoke;
 }
-
 .contactBackground{
   background-color: whitesmoke;
 }
@@ -115,12 +105,7 @@ nav{
 main{
   color:rgb(43, 54, 35);
   font-family: 'Handlee', cursive;
-  
-  
- 
 }
-
-
 
 /* pref page style */
 #prefForm{
@@ -144,9 +129,6 @@ h1 {
 label {
   color: whitesmoke;
 }
-
-
-
 .collapsible-header{
   background-color: rgb(231, 229, 229);
   
@@ -165,8 +147,6 @@ label {
   color: rgb(143, 140, 140);
   text-shadow:4px 4px 4px rgb(40, 66, 26);
   font-size: 75px;
-  
-  
-  
+ 
 }
 
