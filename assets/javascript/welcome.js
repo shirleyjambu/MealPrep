@@ -123,10 +123,10 @@ function setPreferencesToCheck(prefObj){
 
   for(var key in prefObj){
     if(prefObj[key]===true){
-      if(excludesArr.includes(prefObj[key]){
+      if(excludesArr.includes(prefObj[key])){
         //add in excludes
         allergies.push(prefObj[key]);
-      }else if(dietArr.includes(prefObj[key]){
+      }else if(dietArr.includes(prefObj[key])){
         //add in diet
         diet.push(prefObj[key]);
       }
