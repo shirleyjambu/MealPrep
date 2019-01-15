@@ -1,36 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Mortar & Pestel</title>
-    
-    <!-- Material Icon CDN -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- Materialize CSS CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mortar & Pestel</title>
+
+  <!-- Material Icon CDN -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Materialize CSS CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 
 
-    <!-- Firebase Reference -->
-    <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
-    <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
-    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
+  <!-- Firebase Reference -->
+  <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
 
-    
-     
-    <link href="https://fonts.googleapis.com/css?family=Princess Sofia:400,700" rel="stylesheet"/>
 
-    <!-- Your custom styles -->
-    <link rel="stylesheet" href="./assets/css/style.css">
-  </head>
-  <body id="homebody">
-  <div class="container my-container">  
-      <header>
-          <h1>Mortar & Pestle</h1>
-        <!-- I was also thinking about " Bouquet Garni "-->
-         
-      </header>
+
+  <link href="https://fonts.googleapis.com/css?family=Princess Sofia|Handlee:400,700" rel="stylesheet" />
+
+  <!-- Your custom styles -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body id="homebody">
+  <div class="container my-container">
+    <header>
+      <h1>Mortar & Pestle</h1>
+      <!-- I was also thinking about " Bouquet Garni "-->
+
+    </header>
     <main>
       <!-- Card Panel -->
       <div class="row">
@@ -42,30 +44,45 @@
               <span class="card-title">Trending & Useful</span>
               <ul class="collapsible popout" data-collapsible="accordion">
                 <li>
-                  <div class="collapsible-header my-collapsible-header"><i class="material-icons">trending_up</i>Trending
+                  <div class="collapsible-header"><i class="material-icons">trending_up</i>Trending
                     Recipes</div>
                   <div class="collapsible-body"><span>~</span></div>
                 </li>
                 <li>
-                  <div class="collapsible-header"><i class="material-icons">link</i>Reduce Food Waste</div>
-                  <div class="collapsible-body"><a href="https://foodprint.org/blog/cook-like-a-chef-to-reduce-food-waste/">Cook
+                  <div class="collapsible-header"><i class="material-icons">restaurant_menu</i>Reduce Food Waste</div>
+                  <div class="collapsible-body"><p>In the US, we waste roughly 40 percent of all the food we produce. Click the links to read more about it.</p><br><a href="https://foodprint.org/blog/cook-like-a-chef-to-reduce-food-waste/">Cook
                       Like a Chef to
-                      Reduce Food Waste</a><br><a href="https://foodprint.org/blog/15-easy-ways-to-reduce-food-waste/">15
+                      Reduce Food Waste</a><br><br><a href="https://foodprint.org/blog/15-easy-ways-to-reduce-food-waste/">15
                       Easy Ways to Reduce Food Waste</a></div>
                 </li>
                 <li>
-                  <div class="collapsible-header"><i class="material-icons">whatshot</i>Seasonal Food Guide</div>
-                  <div class="collapsible-body"><a href="https://www.seasonalfoodguide.org/">Find What's in Season Near
-                      You</a><br><a href="https://foodprint.org/eating-sustainably/real-food-encyclopedia/">Real Food
+                  <div class="collapsible-header"><i class="material-icons">wb_sunny</i>Seasonal Food Guide</div>
+                  <div class="collapsible-body">
+                    <p> Seasonal fruits and vegetables produced on local farms are often fresher, as they do not
+                      require long distances for transport. Also, unlike out of season produce which is harvested early
+                      in order to be shipped and distributed to your local retail store, crops picked at their peak of
+                      ripeness are also better tasting and full of flavor. </p><br><a href="https://www.seasonalfoodguide.org/">Find
+                      What's in Season Near
+                      You</a><br><br>
+                    <p>Get Real About Your Food
+                      With over 200 entries, our comprehensive encyclopedia helps you understand the foodprint of each
+                      food listed. You’ll learn how sustainable (or unsustainable!) each food is, what to look for when
+                      shopping for it and even tips on how to cook it.</p><br> <a href="https://foodprint.org/eating-sustainably/real-food-encyclopedia/">Real
+                      Food
                       Encyclopedia</a>
-                    </span></div>
+                  </div>
                 </li>
                 <li>
-                  <div class="collapsible-header"><i class="material-icons">link</i>Contact Us</div>
+                    <div class="collapsible-header"><i class="material-icons">shopping_cart</i>Where Can I Buy Local</div>
+                    <div class="collapsible-body"><span>Most of the produce can be found at your local farmers’ market, through local Community Supported Agriculture (CSA) programs operating in your area and at restaurants and businesses committed to seasonal, local food.</span><br><br><a href="https://www.ams.usda.gov/local-food-directories/farmersmarkets">Find Your Local Farmer's Market</a></div>
+                  </li>
+                <li>
+                  <div class="collapsible-header"><i class="material-icons">contact_mail</i>Contact Us</div>
                   <div class="collapsible-body">
                     <p>Phone : 1-800-732-732</p>
                     <p>Hours : Mon-Fri 8am - 5pm</p>
-                    <span><a class="waves-effect waves-light modal-trigger" href="#modal1">Contact the Developers</a></span>
+                    <a class="waves-effect waves-light modal-trigger" href="#modal1">Contact the Developers</a>
+
                   </div>
                 </li>
               </ul>
@@ -138,7 +155,7 @@
           <div class="card Panel">
 
             <div class="card-content">
-              <span class="card-title">Login for more</span>
+              <span class="card-title">Login For More</span>
               <!-- Login Card-->
               <div id="firebaseui-auth-container"></div>
               <div id="loader">Loading...</div>
