@@ -11,7 +11,7 @@ firebase.initializeApp(config);
 
 var database = firebase.database();
 var userName = localStorage.getItem("mpUserName");
-var userRef = database.ref("/"+userName+"/favs");
+var favsRef = database.ref("/"+userName+"/favs");
 
 // Functions
 
@@ -27,12 +27,12 @@ function getRecipes(food){
   })
     // After data comes back from the request
     .then(function(response) {
-      console.log(queryURL);
+      //console.log(queryURL);
 
-      console.log(response);
+      //console.log(response);
       // storing the data from the AJAX request in the results variable
       var recipeData = response.hits;
-      console.log("No of Recipes : " + recipeData.length);
+      //console.log("No of Recipes : " + recipeData.length);
 
       displayRecipes(recipeData);
       
@@ -43,7 +43,6 @@ function displayRecipes(recipeData){
   $("#recipes").empty();
   // Looping through each result item
   for (var i = 0; i < recipeData.length; i++) {
-    console.log("Inside Display : " + recipeData[i].recipe.label);
     var $card = getRecipeCard(recipeData[i]);
     var $cardDiv = $("<div>").addClass("col s12 m4").append($card);
     $("#recipes").append($cardDiv);
@@ -93,6 +92,16 @@ function getUserNameFromEmail(email){
   return uName;
 }
 
+//Adds the favorite recipes as Chips
+function addToFavorites(favRecipe){
+  var favUrl = favRecipe.val().url;
+  var favTitle = favRecipe.val().title;
+  var favKey = favRecipe.key;
+  // Added as chips
+  $("#favs").append(`<div class="chip"><a href="${favUrl}" target="new">${favTitle}</a><i class="close material-icons" data-key='${favKey}'>close</i></div>`);
+      
+}
+
 //Listeners
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
@@ -103,6 +112,11 @@ firebase.auth().onAuthStateChanged(function(user) {
     console.log("NOT Logged USER");
     // No user is signed in.
   }
+});
+
+//Onload get Favs
+favsRef.on("child_added",function (favSnapshot) {
+    addToFavorites(favSnapshot);
 });
 
 //Event handlers
@@ -126,14 +140,17 @@ $(document).ready(function(){
 
   // Add to Favorites
   $(document).on("click",".favIcon",function(){
-    console.log("Add to Favorites");
     var recipeUrl = $(this).attr("data-url");
     var recipeTitle = $(this).attr("data-title");
-
-    console.log("url & title : " + recipeUrl + " " + recipeTitle);
-    var favData = {"favs":recipeUrl};
-    
-    console.log(favData);
-    userRef.push(favData);
+    var favData = {title:recipeTitle,url:recipeUrl};
+    favsRef.push(favData);
   });
+
+  //Delete Favorites
+  $(document).on("click",".close",function(){
+    var favKey=$(this).attr("data-key");
+    var favItem = database.ref("/"+userName+"/favs/"+favKey);
+    favItem.remove();
+  });
+
 });
