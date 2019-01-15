@@ -50,12 +50,3 @@ var uiConfig = {
 
 // The start method will wait until the DOM is loaded.
 ui.start('#firebaseui-auth-container', uiConfig);
-
-//Functions
-//Functions
-function getRecipes(event){
-  event.preventDefault();
-  var ing = $("#ingredient").val();
-  window.location.href = ("./recipes.html?ing="+ing);
-}
-$("#searchbyIng").on("click", getRecipes);

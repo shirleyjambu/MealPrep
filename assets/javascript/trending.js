@@ -1,4 +1,13 @@
-//Function
+//Functions
+function getRecipes(event){
+  event.preventDefault();
+  var ing = $("#ingredient").val().trim();
+  if(ing===""){
+    $("#errorMsg").text("Please enter an ingredient");
+    return false;
+  }
+  window.location.href = ("./recipes.html?ing="+ing);
+}
 
 
 function setTrendingDataFromApi(food){
@@ -23,7 +32,6 @@ function setTrendingDataFromApi(food){
       
     });
 }
-
 
 
 function setTrendingRecipe(){
@@ -70,6 +78,6 @@ function getRecipeCard(recipe){
 
 //Event Handler
 $(document).ready(function(){
-
   setTrendingRecipe();
+  $("#searchbyIng").on("click", getRecipes);
 });
