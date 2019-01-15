@@ -149,8 +149,8 @@
     if (localStorage.getItem('ingredient') != '') {
       food = localStorage.getItem('ingredient');
 
-      var app_id = '669cdf00';
-      var app_key = 'ddf1ac17ccf1eb1b54bf9cb20d749a65';
+      var app_id = 'c44e7b73';
+      var app_key = 'bdae3c56829cb3bd8fa7ff4ec1ecec55';
       var queryURL = "https://api.edamam.com/search?q=" +
 
         food + "&app_id=" + app_id + "&app_key=" + app_key;
@@ -245,8 +245,8 @@
       console.log(foods);
 
 
-      var app_id = '669cdf00';
-      var app_key = 'ddf1ac17ccf1eb1b54bf9cb20d749a65';
+      var app_id = 'c44e7b73';
+      var app_key = 'bdae3c56829cb3bd8fa7ff4ec1ecec55';
 
       var query_string = '';
 
@@ -269,7 +269,7 @@
 
 
 
-      var queryURL = "https://api.edamam.com/search" + query_string + "&app_id=" + app_id + "&app_key=" + app_key;
+      var queryURL = "https://api.edamam.com/search" + query_string + query_string + "&app_id=" + app_id + "&app_key=" + app_key;
 
       // Performing an AJAX request with the queryURL
 
@@ -316,7 +316,7 @@
             html += '</div>';
             html += '<span class="card-title blue-text text-darken-2"><a href="' + recipeData[i].recipe.url + '" style="color:#fff;">' +
               recipeData[i].recipe.label + '</a></span>';
-            html += '<p style="height:170px;overflow-y:auto;" id="demo">' + lineBreak.recipeData[i].recipe.ingredientLines + '</p>';
+            html += '<p style="height:170px;overflow-y:auto;" id="demo">' + recipeData[i].recipe.ingredientLines + '</p>';
             html += '</div>';
             html += '</div>';
             html += '</div>'; 

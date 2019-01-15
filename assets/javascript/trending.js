@@ -1,10 +1,10 @@
 //Function
 
 
-function getRecipes(food){
+function getTrendingDataFromApi(food){
   // Constructing a queryURL using the food name
   var queryURL = "https://api.edamam.com/search?q=" +
-  food + "&app_id=669cdf00"+ "&app_key=ddf1ac17ccf1eb1b54bf9cb20d749a65" ;
+  food + "&app_id=c44e7b73"+ "&app_key=bdae3c56829cb3bd8fa7ff4ec1ecec55" ;
   
   // Performing an AJAX request with the queryURL
   $.ajax({
@@ -13,29 +13,34 @@ function getRecipes(food){
   })
     // After data comes back from the request
     .then(function(response) {
-      //console.log(queryURL);
+      console.log(queryURL);
 
-      //console.log(response);
+      console.log(response);
       // storing the data from the AJAX request in the results variable
-      var recipeData = response.hits;
-      //console.log("No of Recipes : " + recipeData.length);
+      var recipeData = [response.hits[0]];
+      console.log("No of Recipes : " + recipeData.length);
 
-      setTrendingRecipe("eggs");
+      var $card = getRecipeCard(recipeData);
+      $("#trendingRecipe").append("CARD CONTENT");
+      //$("#trendingRecipe").append($card);
+      //return recipeData;
       
     });
 }
 
 
 
-function setTrendingRecipe(){
+function setTrendingRecipe(recipeData){
   $("#trendingRecipe").empty();
 
-  var recipe = getTrendingDataFromApi("Eggs");
-  var $card = getRecipeCard(recipe);
-  $("#trendingRecipe").html($card);
+  getTrendingDataFromApi("eggs");
+  //console.log("Returned : " + recipeData.length);
+  //var $card = getRecipeCard(recipeData);
+  //$("#trendingRecipe").html($card);
 }
 
 function getRecipeCard(recipe){
+  console.log(recipe.length);
   
   var recipeLabel = recipe.recipe.label;
   var recipeImage = recipe.recipe.image;
@@ -73,5 +78,7 @@ function getRecipeCard(recipe){
 
 //Event Handler
 $(document).ready(function(){
+  console.log("Set Values");
+  $("#trendingRecipe").append("CARD CONTENT");
   setTrendingRecipe();
 });
