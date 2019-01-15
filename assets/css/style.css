@@ -3,87 +3,32 @@
   background-image: url("../images/bowl.jpg");
   background-size: 100%;
 }
-
 .my-container{ 
   width: 90%;
 }
-
 h1 {
   font-family: 'Princess Sofia', cursive;
   text-shadow: 4px 4px 4px rgb(255, 255, 255);
   font-size: 80px;
   padding-left: 10px;
+  color:rgb(43, 54, 35);
 }
-
-
+#prefBody {
+  background-image: url("../images/chopping.jpg");
+  background-size: 100%;
+}
 /* Home Page */
-
-
 /* Welcome User */
 .favIcon{
   color:red;
 }
-
 .chip a{
   color:red;
 }
-
 /* Recipes */
-
-/* Preferences*/
-#prefForm{
-  padding: 25px;
-}
-
-
-/* Contact */
-
-
-/* Please check these and put in respective placeholders */
-nav{
-  background-color:whitesmoke;
-  color: black;
-}
-
-.page-footer{
-  background-color:whitesmoke;
-}
-
-.contactBackground{
-  background-color: whitesmoke;
-}
-
-.card{
-  border-radius: 1.5em;
-  /*background-color:rgba(255, 208, 0, 0.274);*/ 
-  background-color: whitesmoke;
-  color:darkolivegreen;
-}
-
-<<<<<<< HEAD
-
-/* pref page style */
-#prefForm{
-  padding: 25px;
-}
-.favIcon{
-  color:red;
-}
-h1 {
-  font-family: 'Princess Sofia', cursive;
-  text-shadow: 4px 4px 4px rgb(255, 255, 255);
-  font-size: 80px;
-  padding-left: 10px;
-  
-}
-
-
-=======
->>>>>>> 46f95121d8605d4051c074f82928be32711a722c
 .card-action-right {
   float: right;
 }
-
 .card__date {
   background: #08c;
   position: absolute;
@@ -98,25 +43,85 @@ h1 {
   font-weight: bold;
   padding-top: 10px;
 }
-
 .card__date__day {
   display: block;
   font-size: 14px;
 }
-
 .card__date__month {
   display: block;
   font-size: 10px;
   text-transform: uppercase;
 }
-
-<<<<<<< HEAD
-.my-collapsible-header{
-  min-width: 100%;
+/* Preferences*/
+#prefForm{
+  padding: 25px;
 }
-=======
-/*li{
-  display:inline-block;
-}*/
-
->>>>>>> 46f95121d8605d4051c074f82928be32711a722c
+/* Contact */
+/* Please check these and put in respective placeholders */
+nav{
+  background-color:whitesmoke;
+  color: black;
+}
+.page-footer{
+  background-color:whitesmoke;
+}
+.contactBackground{
+  background-color: whitesmoke;
+}
+.card {
+  border-radius: 1.5em;
+  /*background-color:rgba(255, 208, 0, 0.274);*/ 
+  background-color: whitesmoke;
+  color:rgb(43, 54, 35);
+  font-family: 'Handlee', cursive;
+ 
+}
+#myKitchen {
+  font-family: 'Princess Sofia', cursive;
+  background-color: transparent;
+  background-size: 100%;
+  color: rgb(116, 112, 112);
+  text-shadow:4px 4px 4px rgb(242, 247, 239);
+  font-size: 75px;
+  
+  
+  
+}
+main{
+  color:rgb(43, 54, 35);
+  font-family: 'Handlee', cursive;
+  
+  
+ 
+}
+/* pref page style */
+#prefForm{
+  padding: 25px;
+}
+.favIcon{
+  color:red;
+}
+h1 {
+  font-family: 'Princess Sofia', cursive;
+  text-shadow: 4px 4px 4px rgb(255, 255, 255);
+  font-size: 80px;
+  padding-left: 10px;
+  
+}
+#pref{
+  background-color: rgba(58, 57, 57, 0.61);
+  
+}
+label {
+  color: whitesmoke;
+}
+.collapsible-header{
+  background-color: rgb(231, 229, 229);
+  
+  
+}
+#prefBar {
+  background-color: rgba(116, 113, 113, 0.712);
+  color: whitesmoke;
+  font-size: bold;
+}
