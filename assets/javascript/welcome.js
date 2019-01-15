@@ -12,6 +12,11 @@ firebase.initializeApp(config);
 var database = firebase.database();
 var userName = localStorage.getItem("mpUserName");
 var favsRef = database.ref("/"+userName+"/favs");
+var prefRef = database.ref("/"+userName+"/pref");
+
+//Global Variables
+var diet=[];
+var allergies=[];
 
 // Functions
 
@@ -28,6 +33,16 @@ function getRecipes(food){
     // After data comes back from the request
     .then(function(response) {
       //console.log(queryURL);
+      
+
+      for(var i=0;i<diet.length;i++){
+        queryURL = queryURL + "&diet=" + diet[i];
+      }
+
+      for(var i=0;i<allergies.length;i++){
+        queryURL = queryURL + "&excluded=" + allergies[i];
+      }
+
 
       //console.log(response);
       // storing the data from the AJAX request in the results variable
@@ -102,6 +117,23 @@ function addToFavorites(favRecipe){
       
 }
 
+function setPreferencesToCheck(prefObj){
+  var excludesArr =['gluten-free','tree-nut-free','peanut-free'];
+  var dietArr =['low-carb','balanced'];
+
+  for(var key in prefObj){
+    if(prefObj[key]===true){
+      if(excludesArr.includes(prefObj[key]){
+        //add in excludes
+        allergies.push(prefObj[key]);
+      }else if(dietArr.includes(prefObj[key]){
+        //add in diet
+        diet.push(prefObj[key]);
+      }
+    }
+  }
+}
+
 //Listeners
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
@@ -112,6 +144,11 @@ firebase.auth().onAuthStateChanged(function(user) {
     console.log("NOT Logged USER");
     // No user is signed in.
   }
+});
+
+// Check for Preferences in firebase
+prefRef.on("child_added",function (prefSnapshot) {
+    setPreferencesToCheck(prefSnapshot.val());
 });
 
 //Onload get Favs
