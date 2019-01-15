@@ -12,6 +12,7 @@ h1 {
   font-size: 80px;
   padding-left: 10px;
   color:rgb(43, 54, 35);
+
 }
 #prefBody {
   background-image: url("../images/chopping.jpg");
@@ -29,6 +30,7 @@ h1 {
 .card-action-right {
   float: right;
 }
+
 .card__date {
   background: #08c;
   position: absolute;
@@ -47,6 +49,7 @@ h1 {
   display: block;
   font-size: 14px;
 }
+
 .card__date__month {
   display: block;
   font-size: 10px;
@@ -68,6 +71,7 @@ nav{
 .contactBackground{
   background-color: whitesmoke;
 }
+
 .card {
   border-radius: 1.5em;
   /*background-color:rgba(255, 208, 0, 0.274);*/ 
@@ -90,10 +94,9 @@ nav{
 main{
   color:rgb(43, 54, 35);
   font-family: 'Handlee', cursive;
-  
-  
- 
+
 }
+
 /* pref page style */
 #prefForm{
   padding: 25px;
@@ -108,6 +111,7 @@ h1 {
   padding-left: 10px;
   
 }
+
 #pref{
   background-color: rgba(58, 57, 57, 0.61);
   
@@ -118,10 +122,11 @@ label {
 .collapsible-header{
   background-color: rgb(231, 229, 229);
   
-  
 }
 #prefBar {
   background-color: rgba(116, 113, 113, 0.712);
   color: whitesmoke;
+
   font-size: bold;
 }
+
