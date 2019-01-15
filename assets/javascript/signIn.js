@@ -1,3 +1,5 @@
+
+
  // Initialize Firebase
  var config = {
   apiKey: "AIzaSyDu6OahnJpzNLQbl3aFDi_WssS6-uFPXGw",
@@ -15,11 +17,11 @@ var ui = new firebaseui.auth.AuthUI(firebase.auth());
 var uiConfig = {
   callbacks: {
     signInSuccessWithAuthResult: function(authResult, redirectUrl) {
-      console.log(authResult)
+      
       // User successfully signed in.
       // Return type determines whether we continue the redirect automatically
       // or whether we leave that to developer to handle.
-      // return true;
+      return true;
     },
     uiShown: function() {
       // The widget is rendered.
@@ -44,7 +46,7 @@ var uiConfig = {
     // }
   ],
   // Terms of service url.
-  //tosUrl: 'welcome.html',
+  tosUrl: 'welcome.html',
   // Privacy policy url.
  // privacyPolicyUrl: 'trains.html'
 };

@@ -13,12 +13,14 @@
 
 // Create a variable to reference the database
 var database = firebase.database();
-var userName = localStorage.getItem("mpUserName");
-var prefRef = database.ref("/"+userName+"/pref");
+var userRef = database.ref("/Users");
 
-var preferenceKey = "";
+var userName = "";
+var favoriteIngredients = [];
+var allergy = [];
+var diet = [];
 
-//Functions
+//Function
 
 function getDetails(){
   var form = document.getElementById('myform');
@@ -33,56 +35,98 @@ function getDetails(){
   return checked;
 }
 
-function getAllDetails(){
-  var form = document.getElementById('myform');
-  var chks = form.querySelectorAll('input[type="checkbox"]');
-  var allCb = {};
+$("#pref").on("click", function getChcked(){
+  console.log("Id : " + firebase.auth().currentUser.uid);
+  console.log("Email : " + firebase.auth().currentUser.email);
+  var userId = firebase.auth().currentUser.uid;
+  var prefDetails = getDetails();
   
-  var item1 = {
-    chicken:true
-  };
-  var item2 = {
-    eggs:false
-  };
-  //{chicken:true,eggs:false};
-  for(var i = 0; i < chks.length; i++){
-      if(chks[i].checked){
-          allCb[chks[i].id] = true;
-        }else{
-          allCb[chks[i].id] = false;
-        }
-    }
-  console.log(allCb);
-  return allCb;
-}
-
-function setPreferences(prefObj){
-  for(var key in prefObj){
-    if(prefObj[key]===true){
-      $("#"+key).attr("checked",true);
-    }
-  }
-}
-
-// Event Handlers
-
-//Save or Update Preferences
-$("#pref").on("click", function(){
-  var prefData = getAllDetails();
-  if(preferenceKey === ""){
-    prefRef.push(prefData);
-  }else{
-    database.ref("/"+userName+"/pref/" + preferenceKey).update(prefData);
-  }
+  var prefData = {"pref":prefDetails};
   
+  console.log(prefData);
+  
+
+  userRef.push(prefData);
+//  document.getElementById("myForm").reset();
 
 })
 
-// Listeners
-prefRef.on("child_added",function (prefSnapshot) {
-  //Set the key, as global var for update
-  preferenceKey = prefSnapshot.key;
-  
-  setPreferences(prefSnapshot.val());
-  
+database.ref().on("value", function(snapshot) {
+  // storing the snapshot.val() in a variable for convenience
+  var sv = snapshot.val();
+
+  // Console.loging the last user's data
+  console.log(sv.name);
+  console.log(sv.email);
+  console.log(sv.age);
+  console.log(sv.comment);
+
+  // Change the HTML to reflect
+  $("#name-display").text(sv.name);
+  $("#email-display").text(sv.email);
+  $("#age-display").text(sv.age);
+  $("#comment-display").text(sv.comment);
+
+  // Handle the errors
+}, function(errorObject) {
+  console.log("Errors handled: " + errorObject.code);
 });
+//   function writeUserData(userId, name, email, imageUrl) {
+//     firebase.database().ref('users/' + userId).set({
+//       username: name,
+//       email: email,
+//       profile_picture : imageUrl
+//     });
+//   }
+
+ 
+// }
+
+  // // Initial Values
+  // var name = "";
+  // var email = "";
+  // var age = 0;
+  // var comment = "";
+
+  // // Capture Button Click
+  // $("#add-user").on("click", function (event) {
+  //   // Don't refresh the page!
+  //   event.preventDefault();
+
+  //   // YOUR TASK!!!
+  //   // Code in the logic for storing and retrieving the most recent user.
+  //   // Don't forget to provide initial data to your Firebase database.
+  //   name = $("#name-input").val().trim();
+  //   email = $("#email-input").val().trim();
+  //   age = $("#age-input").val().trim();
+  //   comment = $("#comment-input").val().trim();
+
+  //   database.ref().set({
+  //     name: name,
+  //     email: email,
+  //     age: age,
+  //     comment: comment
+  //   });
+
+  // });
+
+  //     // Firebase watcher + initial loader HINT: .on("value")
+  //     database.ref().on("value", function(snapshot) {
+
+  //       // Log everything that's coming out of snapshot
+  //       console.log(snapshot.val());
+  //       console.log(snapshot.val().name);
+  //       console.log(snapshot.val().email);
+  //       console.log(snapshot.val().age);
+  //       console.log(snapshot.val().comment);
+  
+  //       // Change the HTML to reflect
+  //       $("#name-display").text(snapshot.val().name);
+  //       $("#email-display").text(snapshot.val().email);
+  //       $("#age-display").text(snapshot.val().age);
+  //       $("#comment-display").text(snapshot.val().comment);
+  
+  //       // Handle the errors
+  //     }, function(errorObject) {
+  //       console.log("Errors handled: " + errorObject.code);
+  //     });

@@ -11,22 +11,22 @@ firebase.initializeApp(config);
 
 var database = firebase.database();
 var userName = localStorage.getItem("mpUserName");
-var favsRef = database.ref("/"+userName+"/favs");
+var favsRef = database.ref("/" + userName + "/favs");
 
 // Functions
 
-function getRecipes(food){
+function getRecipes(food) {
   // Constructing a queryURL using the food name
   var queryURL = "https://api.edamam.com/search?q=" +
-  food + "&app_id=669cdf00"+ "&app_key=ddf1ac17ccf1eb1b54bf9cb20d749a65" ;
-  
+    food + "&app_id=669cdf00" + "&app_key=ddf1ac17ccf1eb1b54bf9cb20d749a65";
+
   // Performing an AJAX request with the queryURL
   $.ajax({
-    url: queryURL,
-    method: "GET"
-  })
+      url: queryURL,
+      method: "GET"
+    })
     // After data comes back from the request
-    .then(function(response) {
+    .then(function (response) {
       //console.log(queryURL);
 
       //console.log(response);
@@ -35,11 +35,11 @@ function getRecipes(food){
       //console.log("No of Recipes : " + recipeData.length);
 
       displayRecipes(recipeData);
-      
+
     });
 }
 
-function displayRecipes(recipeData){
+function displayRecipes(recipeData) {
   $("#recipes").empty();
   // Looping through each result item
   for (var i = 0; i < recipeData.length; i++) {
@@ -49,17 +49,45 @@ function displayRecipes(recipeData){
   }
 }
 
-function getRecipeCard(recipe){
-  
+function getRecipeCard(recipe) {
+
   var recipeLabel = recipe.recipe.label;
   var recipeImage = recipe.recipe.image;
   var recipeSource = recipe.recipe.source;
   var recipeUrl = recipe.recipe.url;
+  // var recipeHealth = recipe.recipe.healthLabels;
+  // var recipeIngredient = recipe.recipe.ingredientLines;
+  // var recipeDiet = recipe.recipe.dietLabels;
+  // var Allergies = ["eggs", "peanuts", "Tree-Nut-Free"];
+  // var Ingredients = ["chicken", "eggs"];
+  // var Diet = ["Low-Carb"];
 
- /* console.log("Inside RecipeCard : " + recipeLabel);
-  console.log("Recipeimage : " + recipeImage);
-  console.log("Recipesource : " + recipeSource);
-  console.log("Recipe url : " + recipeUrl);*/
+  /* console.log("Inside RecipeCard : " + recipeLabel);
+   console.log("Recipeimage : " + recipeImage);
+   console.log("Recipesource : " + recipeSource);
+   console.log("Recipe url : " + recipeUrl);*/
+  // console.log("Health Alert : " + recipeHealth);
+
+  // for (var i = 0; i < recipeHealth.length; i++) {
+  //   console.log(i + " is" + recipeHealth[i]);
+  //   if (Allergies.includes(recipeHealth[i])) {
+  //     console.log("Allergypresent");
+  //   }
+  // }
+  // for (var i = 0; i < recipeIngredient.length; i++) {
+  //   console.log(i + " is" + recipeIngredient[i]);
+  //   if (Ingredients.includes(recipeIngredient[i])) {
+  //     console.log("ingredientpresent");
+  //   }
+  // }
+  // for (var i = 0; i < recipeDiet.length; i++) {
+  //   console.log(i + " is" + recipeIngredient[i]);
+  //   if (Diet.includes(recipeIngredient[i])) {
+  //     console.log("dietpresent");
+  //   }
+  // }
+
+
 
   var $card = $("<div>").addClass("card small");
   var $cardImg = $("<div>").addClass("card-image");
@@ -67,9 +95,9 @@ function getRecipeCard(recipe){
   //var $spTitle = $("<span>").addClass("card-title");
   var $cardInfo = $("<div>").addClass("card-content");
   var $cardAction = $("<div>").addClass("card-action");
-  
-  $img.attr("src",recipeImage);
-  $img.attr("alt","Alt Text");
+
+  $img.attr("src", recipeImage);
+  $img.attr("alt", "Alt Text");
   $img.appendTo($cardImg);
   $cardImg.appendTo($card);
 
@@ -82,31 +110,31 @@ function getRecipeCard(recipe){
   $cardAction.append(`<a href="#"><i class="fas fa-heart favIcon" data-url='${recipeUrl}' data-title='${recipeLabel}'></i></a>`);
 
   $cardAction.appendTo($card);
- 
+
   return $card;
 }
 
-function getUserNameFromEmail(email){
+function getUserNameFromEmail(email) {
   var ind = email.indexOf("@");
-  var uName = email.substr(0,ind);
+  var uName = email.substr(0, ind);
   return uName;
 }
 
 //Adds the favorite recipes as Chips
-function addToFavorites(favRecipe){
+function addToFavorites(favRecipe) {
   var favUrl = favRecipe.val().url;
   var favTitle = favRecipe.val().title;
   var favKey = favRecipe.key;
   // Added as chips
   $("#favs").append(`<div class="chip"><a href="${favUrl}" target="new">${favTitle}</a><i class="close material-icons" data-key='${favKey}'>close</i></div>`);
-      
+
 }
 
 //Listeners
-firebase.auth().onAuthStateChanged(function(user) {
+firebase.auth().onAuthStateChanged(function (user) {
   if (user) {
     var userName = getUserNameFromEmail(user.email);
-    localStorage.setItem("mpUserName",userName);
+    localStorage.setItem("mpUserName", userName);
     $("#loggedUser").text(userName);
   } else {
     console.log("NOT Logged USER");
@@ -115,41 +143,44 @@ firebase.auth().onAuthStateChanged(function(user) {
 });
 
 //Onload get Favs
-favsRef.on("child_added",function (favSnapshot) {
-    addToFavorites(favSnapshot);
+favsRef.on("child_added", function (favSnapshot) {
+  addToFavorites(favSnapshot);
 });
 
 //Event handlers
-$(document).ready(function(){
+$(document).ready(function () {
   // Logout
-  $("#logout").on("click",function(){
+  $("#logout").on("click", function () {
     firebase.auth().signOut();
   })
 
-    //Search Recipes
-  $("#searchbyIng").on("click",function(){
+  //Search Recipes
+  $("#searchbyIng").on("click", function () {
     event.preventDefault();
-    
+
     var ing = $("#ingredient").val().trim();
     console.log("Search by Ing : " + ing);
     $("#ingredient").val("");
-    
+
     getRecipes(ing);
-   
+
   });
 
   // Add to Favorites
-  $(document).on("click",".favIcon",function(){
+  $(document).on("click", ".favIcon", function () {
     var recipeUrl = $(this).attr("data-url");
     var recipeTitle = $(this).attr("data-title");
-    var favData = {title:recipeTitle,url:recipeUrl};
+    var favData = {
+      title: recipeTitle,
+      url: recipeUrl
+    };
     favsRef.push(favData);
   });
 
   //Delete Favorites
-  $(document).on("click",".close",function(){
-    var favKey=$(this).attr("data-key");
-    var favItem = database.ref("/"+userName+"/favs/"+favKey);
+  $(document).on("click", ".close", function () {
+    var favKey = $(this).attr("data-key");
+    var favItem = database.ref("/" + userName + "/favs/" + favKey);
     favItem.remove();
   });
 
