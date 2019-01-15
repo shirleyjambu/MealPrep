@@ -32,98 +32,106 @@
          
       </header>
     <main>
-    <!-- Card Panel -->
-    <div class = "row">
-        <!-- Card Trending -->         
-         <div class = "col s12 m4">
-            <div class = "card Panel">
-                 <div class="card-content">
-                   
-                   <span class="card-title">Trending & Useful</span>
-                    <ul class="collapsible popout" data-collapsible="accordion">
-                      <li>
-                        <div class="collapsible-header my-collapsible-header"><i class="material-icons">trending_up</i>Trending Recipes</div>
-                        <div class="collapsible-body"><span>~</span></div>
-                      </li>
-                      <li>
-                        <div class="collapsible-header"><i class="material-icons">link</i>Reduce Food Waste</div>
-                        <div class="collapsible-body"><a href="https://foodprint.org/blog/cook-like-a-chef-to-reduce-food-waste/">Cook Like a Chef to
-                          Reduce Food Waste</a><br><a href="https://foodprint.org/blog/15-easy-ways-to-reduce-food-waste/">15
-                          Easy Ways to Reduce Food Waste</a></div>
-                      </li>
-                      <li>
-                          <div class="collapsible-header"><i class="material-icons">whatshot</i>Seasonal Food Guide</div>
-                          <div class="collapsible-body"><a href="https://www.seasonalfoodguide.org/">Find What's in Season Near
-                              You</a><br><a href="https://foodprint.org/eating-sustainably/real-food-encyclopedia/">Real Food
-                              Encyclopedia</a>
-                            </span></div>
-                        </li>
-                      <li>
-                          <div class="collapsible-header"><i class="material-icons">link</i>Contact Us</div>
-                          <div class="collapsible-body">
-                              <p>Phone : 1-800-732-732</p>
-                              <p>Hours : Mon-Fri 8am - 5pm</p>
-                              <span><a class="waves-effect waves-light modal-trigger" href="#modal1">Contact the Developers</a></span>
-                          </div>
-                      </li>
-                    </ul>   
-                                <!-- Modal Structure -->
-                          <div id="modal1" class="modal">
-                                 <div class="modal-content">
-                                <h4>Contact the Developers</h4>
-                                <div id="contact">
-                                  <section class="main-section">
-                                  
-                                      <!-- <form action="https://formspree.io/your@email.com" method="POST" this sends the input from the form to my personal email address. The rules for this api state that each input must have a name attrribute as below with the first being name second being email and third being message -->
-                              
-                                      <form action="https://formspree.io/brucewilson1103@gmail.com" method="POST">
-                                        <div class="form-group">
-                                          <label for="name">Name:</label> <br>
-                                          <input type="text" id="name" name="name" placeholder="John Smith" required="required">
-                              
-                                        </div>
-                              
-                                        <div class="form-group">
-                                          <label for="exampleFormControlInput1">Email address:</label>
-                                          <input type="email" class="form-control" id="exampleFormControlInput1" name="email" placeholder="name@example.com">
-                                        </div>
-                              
-                                        <div class="form-group">
-                                          <label for="exampleFormControlTextarea1">Message:</label>
-                                          <textarea class="form-control" name="message" id="exampleFormControlTextarea1" rows="3"></textarea>
-                                        </div>
-                              
-                                        <div class="spacer1"> <input class="btn btn-info" type="submit" value="Submit">
-                                        </div>
-                                      </form>
-                              
-                                </section>
-                                </div>
-                              </div>
-                              <div class="modal-footer">
-                              <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
-                              </div>
-                            </div>
-                         <!-- End of Code for Modal-->
-    
-                 </div>
-            </div>
-         </div>
-         <!-- Card Search-->
-         <div class = "col s12 m4">
-            <div class = "card medium">
-               <div class="card-content">
-                   <span class="card-title">Get Cooking!</span>
-                   <p>Perfect your preferred cuisine!</p>
-                     <!-- form -->
-                    <form>
-                        <div class="input-field">
-                            <input placeholder="Enter Ingredient" id="ingredient" type="text" class="validate">
-                            <button id="searchbyIng">Quick Search by Ingredient</button>
+      <!-- Card Panel -->
+      <div class="row">
+        <!-- Card Trending -->
+        <div class="col s12 m4">
+          <div class="card Panel">
+            <div class="card-content">
+
+              <span class="card-title">Trending & Useful</span>
+              <ul class="collapsible popout" data-collapsible="accordion">
+                <li>
+                  <div class="collapsible-header my-collapsible-header"><i class="material-icons">trending_up</i>Trending
+                    Recipes</div>
+                  <div class="collapsible-body"><span>~</span></div>
+                </li>
+                <li>
+                  <div class="collapsible-header"><i class="material-icons">link</i>Reduce Food Waste</div>
+                  <div class="collapsible-body"><a href="https://foodprint.org/blog/cook-like-a-chef-to-reduce-food-waste/">Cook
+                      Like a Chef to
+                      Reduce Food Waste</a><br><a href="https://foodprint.org/blog/15-easy-ways-to-reduce-food-waste/">15
+                      Easy Ways to Reduce Food Waste</a></div>
+                </li>
+                <li>
+                  <div class="collapsible-header"><i class="material-icons">whatshot</i>Seasonal Food Guide</div>
+                  <div class="collapsible-body"><a href="https://www.seasonalfoodguide.org/">Find What's in Season Near
+                      You</a><br><a href="https://foodprint.org/eating-sustainably/real-food-encyclopedia/">Real Food
+                      Encyclopedia</a>
+                    </span></div>
+                </li>
+                <li>
+                  <div class="collapsible-header"><i class="material-icons">link</i>Contact Us</div>
+                  <div class="collapsible-body">
+                    <p>Phone : 1-800-732-732</p>
+                    <p>Hours : Mon-Fri 8am - 5pm</p>
+                    <span><a class="waves-effect waves-light modal-trigger" href="#modal1">Contact the Developers</a></span>
+                  </div>
+                </li>
+              </ul>
+              <!-- Modal Structure -->
+              <div id="modal1" class="modal">
+                <div class="modal-content">
+                  <h4>Contact the Developers</h4>
+                  <div id="contact">
+                    <section class="main-section">
+
+                      <!-- <form action="https://formspree.io/your@email.com" method="POST" this sends the input from the form to my personal email address. The rules for this api state that each input must have a name attrribute as below with the first being name second being email and third being message -->
+
+                      <form action="https://formspree.io/brucewilson1103@gmail.com" method="POST">
+                        <div class="form-group">
+                          <label for="name">Name:</label> <br>
+                          <input type="text" id="name" name="name" placeholder="John Smith" required="required">
+
                         </div>
-                    </form>
+
+                        <div class="form-group">
+                          <label for="exampleFormControlInput1">Email address:</label>
+                          <input type="email" class="form-control" id="exampleFormControlInput1" name="email"
+                            placeholder="name@example.com">
+                        </div>
+
+                        <div class="form-group">
+                          <label for="exampleFormControlTextarea1">Message:</label>
+                          <textarea class="form-control" name="message" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+
+                        <div class="spacer1"> <input class="btn btn-info" type="submit" value="Submit">
+                        </div>
+                      </form>
+
+                    </section>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+                </div>
+              </div>
+              <!-- End of Code for Modal-->
+
+            </div>
+          </div>
+        </div>
+        <!-- Card Search-->
+        <div class="col s12 m4">
+          <div class="card medium">
+            <div class="card-content">
+              <span class="card-title">Get Cooking!</span>
+              <p>Perfect your preferred cuisine!</p>
+              <!-- form -->
+              <form action="recipes.html">
+                <div class="input-field">
+                  <input placeholder="Enter Ingredient" id="ingredient" type="text" class="validate">
+                  <button id="searchbyIng">Quick Search by Ingredient</button>
+                </div>
+              </form>
+              <div class="row" style="margin-bottom:auto;">
+
+                <div id="appendDiv">
+                </div>
               </div>
             </div>
+          </div>
         </div>
         <!-- Card Login-->
         <div class="col s12 m4">
@@ -149,19 +157,30 @@
     </main>
   </div>
 
-    <!-- jQuery CDN -->
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-    <!-- Materialize JS CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-    
-    <script src="./assets/javascript/signIn.js"></script>
-    <script>
-      $("document").ready(function(){
-        $('#modal1').modal();
-      });
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+  <!-- Materialize JS CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 
-      
-    </script>
+  <script src="./assets/javascript/signIn.js"></script>
+  <script>
+    $("document").ready(function () {
+      $('#modal1').modal();
+    });
+  </script>
+
+
+
+<!-- search for card 2 -->
+  <script>
+    $('#searchbyIng').on('click', function () {
+      var ingredient_val = $('#ingredient').val();
+
+      var food = ingredient_val;
+      localStorage.setItem('ingredient', food);
+    });
+  </script>
 
 </body>
 
