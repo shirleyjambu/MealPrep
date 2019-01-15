@@ -40,6 +40,12 @@
    <main>
    <!-- Your Code goes here-->
    <div class="container">
+       <!-- Favorites-->
+       Favorites
+       
+       <div id="favs">
+         
+       </div>
         <!-- form -->
         <form>
             <div class="input-field">
@@ -47,6 +53,7 @@
                 <button type="submit" id="searchbyIng">Quick Search by Ingredient</button>
             </div>
         </form>
+        
         <!-- Recipes-->
         <div class="row" id="recipes"></div>
    </div>
@@ -59,6 +66,10 @@
    <!-- Materialize JS CDN -->
    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
    <script src="./assets/javascript/welcome.js"></script>
-   
+   <script>
+     $(document).ready(function(){
+        $('.carousel').carousel();
+    });   
+   </script>
 </body>
 </html>

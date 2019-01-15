@@ -93,6 +93,14 @@ function getUserNameFromEmail(email){
   return uName;
 }
 
+function addToFavorites(favRecipe){
+  var favUrl = favRecipe.val().url;
+  var favTitle = favRecipe.val().title;
+
+  $("#favs").append(`<div class="chip"><a href="${favUrl}" target="new">${favTitle}</a></div>`);
+      
+}
+
 //Listeners
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
@@ -103,6 +111,11 @@ firebase.auth().onAuthStateChanged(function(user) {
     console.log("NOT Logged USER");
     // No user is signed in.
   }
+});
+
+//Onload get Favs
+userRef.on("child_added",function (favSnapshot) {
+    addToFavorites(favSnapshot);
 });
 
 //Event handlers
@@ -131,7 +144,7 @@ $(document).ready(function(){
     var recipeTitle = $(this).attr("data-title");
 
     console.log("url & title : " + recipeUrl + " " + recipeTitle);
-    var favData = {"favs":recipeUrl};
+    var favData = {title:recipeTitle,url:recipeUrl};
     
     console.log(favData);
     userRef.push(favData);
