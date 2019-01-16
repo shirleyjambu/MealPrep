@@ -31,11 +31,8 @@
     <header>
       <h1>Mortar & Pestle</h1>
       <!-- I was also thinking about " Bouquet Garni "-->
-
     </header>
     <main>
-     
-
       <!-- Card Panel -->
       <div class="row">
         <!-- Card Trending -->
@@ -51,14 +48,19 @@
                     Recipes</div>
                   <div id="trendingRecipe" class="collapsible-body">
                   </div>
-                  
+
                 </li>
                 <li>
                   <div class="collapsible-header"><i class="material-icons">restaurant_menu</i>Reduce Food Waste</div>
-                  <div class="collapsible-body"><p>In the US, we waste roughly 40 percent of all the food we produce. Click the links to read more about it.</p><br><a href="https://foodprint.org/blog/cook-like-a-chef-to-reduce-food-waste/" target="new">Cook
+                  <div class="collapsible-body">
+                    <p>In the US, we waste roughly 40 percent of all the food we produce. Click the links to read more
+                      about it.</p><br><a href="https://foodprint.org/blog/cook-like-a-chef-to-reduce-food-waste/"
+                      target="new">Cook
                       Like a Chef to
-                      Reduce Food Waste</a><br><br><a href="https://foodprint.org/blog/15-easy-ways-to-reduce-food-waste/" target="new">15
-                      Easy Ways to Reduce Food Waste</a></div>
+                      Reduce Food Waste</a><br><br><a href="https://foodprint.org/blog/15-easy-ways-to-reduce-food-waste/"
+                      target="new">15
+                      Easy Ways to Reduce Food Waste</a>
+                  </div>
                 </li>
                 <li>
                   <div class="collapsible-header"><i class="material-icons">wb_sunny</i>Seasonal Food Guide</div>
@@ -66,21 +68,26 @@
                     <p> Seasonal fruits and vegetables produced on local farms are often fresher, as they do not
                       require long distances for transport. Also, unlike out of season produce which is harvested early
                       in order to be shipped and distributed to your local retail store, crops picked at their peak of
-                      ripeness are also better tasting and full of flavor. </p><br><a href="https://www.seasonalfoodguide.org/" target="new">Find
+                      ripeness are also better tasting and full of flavor. </p><br><a href="https://www.seasonalfoodguide.org/"
+                      target="new">Find
                       What's in Season Near
                       You</a><br><br>
                     <p>Get Real About Your Food
                       With over 200 entries, our comprehensive encyclopedia helps you understand the foodprint of each
                       food listed. You’ll learn how sustainable (or unsustainable!) each food is, what to look for when
-                      shopping for it and even tips on how to cook it.</p><br> <a href="https://foodprint.org/eating-sustainably/real-food-encyclopedia/" target="new">Real
+                      shopping for it and even tips on how to cook it.</p><br> <a href="https://foodprint.org/eating-sustainably/real-food-encyclopedia/"
+                      target="new">Real
                       Food
                       Encyclopedia</a>
                   </div>
                 </li>
                 <li>
-                    <div class="collapsible-header"><i class="material-icons">shopping_cart</i>Where Can I Buy Local</div>
-                    <div class="collapsible-body"><span>Most of the produce can be found at your local farmers’ market, through local Community Supported Agriculture (CSA) programs operating in your area and at restaurants and businesses committed to seasonal, local food.</span><br><br><a href="https://www.ams.usda.gov/local-food-directories/farmersmarkets" target="new">Find Your Local Farmer's Market</a></div>
-                  </li>
+                  <div class="collapsible-header"><i class="material-icons">shopping_cart</i>Where Can I Buy Local</div>
+                  <div class="collapsible-body"><span>Most of the produce can be found at your local farmers’ market,
+                      through local Community Supported Agriculture (CSA) programs operating in your area and at
+                      restaurants and businesses committed to seasonal, local food.</span><br><br><a href="https://www.ams.usda.gov/local-food-directories/farmersmarkets"
+                      target="new">Find Your Local Farmer's Market</a></div>
+                </li>
                 <li>
                   <div class="collapsible-header"><i class="material-icons">contact_mail</i>Contact Us</div>
                   <div class="collapsible-body">
@@ -184,16 +191,13 @@
   <script src="./assets/javascript/signIn.js"></script>
   <script src="./assets/javascript/trending.js"></script>
 
+
   <script>
     $("document").ready(function () {
       $('#modal1').modal();
     });
-  </script>
 
-
-
-<!-- search for card 2 -->
-  <script>
+    // Search for card 2 
     $('#searchbyIng').on('click', function () {
       var ingredient_val = $('#ingredient').val();
 

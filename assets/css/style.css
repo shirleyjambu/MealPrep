@@ -1,19 +1,20 @@
 /* common styles*/
-#homebody{
+#homebody {
   background-image: url("../images/bowl.jpg");
   background-size: 100%;
 }
-.my-container{ 
+
+.my-container {
   width: 90%;
 }
+
 h1 {
   font-family: 'Princess Sofia', cursive;
   text-shadow: 4px 4px 4px rgb(255, 255, 255);
   font-size: 80px;
-  
-  color:rgb(43, 54, 35);
-
+  color: rgb(43, 54, 35);
 }
+
 #prefBody {
   background-image: url("../images/chopping.jpg");
   background-size: 100%;
@@ -25,9 +26,9 @@ h1 {
 }
 
 #errorMsg {
-margin: 10px;
-text-align: center;
-color: red;
+  margin: 10px;
+  text-align: left;
+  color: red;
 }
 
 
@@ -35,25 +36,46 @@ color: red;
 
 
 /* Welcome User */
-.favIcon{
-  color:red;
-}
-.chip a{
-  color:red;
+#logoutBtn {
+  margin: 5px;
+  float: right;
+  color: whitesmoke;
+  font-size: 20px;
 }
 
-#welDiv
- {
+#allergiesSpan {
+  color: red;
+}
+
+#dietSpan {
+  color: red;
+}
+
+#favTitle {
+  font-size: 20px;
+}
+
+.favIcon {
+  color: red;
+}
+
+.chip a {
+  color: red;
+}
+
+#welDiv {
   background-image: url("../images/bunch.jpg");
   background-size: 100%;
   font-family: 'Playfair Display', cursive;
   font-weight: bold;
-  
+
 }
+
 #welBody {
   background-color: rgba(238, 233, 226, 0.493);
-  
+
 }
+
 #welHead {
   background-color: transparent;
   color: rgb(15, 15, 15);
@@ -79,6 +101,7 @@ color: red;
   font-weight: bold;
   padding-top: 10px;
 }
+
 .card__date__day {
   display: block;
   font-size: 14px;
@@ -93,21 +116,21 @@ color: red;
 #repBody {
   background-image: url("../images/boards-brown.jpg");
   background-size: 100%;
- 
 }
+
 #panelHead {
   background-color: transparent;
   background-size: 80%;
-
 }
 
 #hTag {
-  color:rgb(24, 22, 22) ;
+  color: rgb(24, 22, 22);
   font-family: 'Princess Sofia', cursive;
   text-shadow: 4px 4px 4px rgb(243, 233, 233);
   font-size: 80px;
   padding-left: 10px;
 }
+
 .dropdown-button,
 #search_recipe,
 .dropdown-content {
@@ -115,66 +138,65 @@ color: red;
 }
 
 /* Preferences*/
-#prefForm{
+#prefForm {
   padding: 25px;
 }
 
 /* Contact */
-/* Please check these and put in respective placeholders */
-nav{
-  background-color:whitesmoke;
+
+nav {
+  background-color: whitesmoke;
   color: black;
 }
-.page-footer{
-  background-color:whitesmoke;
+
+.page-footer {
+  background-color: whitesmoke;
 }
-.contactBackground{
+
+.contactBackground {
   background-color: whitesmoke;
 }
 
 .card {
   border-radius: 1.5em;
-  /*background-color:rgba(255, 208, 0, 0.274);*/ 
+  /*background-color:rgba(255, 208, 0, 0.274);*/
   background-color: whitesmoke;
-  color:rgb(43, 54, 35);
+  color: rgb(43, 54, 35);
   font-family: 'Playfair Display', cursive;
   font-weight: bold;
- 
+
 }
 
-main{
-  color:rgb(43, 54, 35);
+main {
+  color: rgb(43, 54, 35);
   font-family: 'Playfair Display', cursive;
-  
+
 }
 
 /* pref page style */
-#prefForm{
+#prefForm {
   padding: 25px;
 }
-.favIcon{
-  color:red;
+
+.favIcon {
+  color: red;
 }
+
 h1 {
   font-family: 'Princess Sofia', cursive;
   text-shadow: 4px 4px 4px rgb(255, 255, 255);
   font-size: 80px;
-  
-  
 }
 
-#pref{
+#pref {
   background-color: rgba(58, 57, 57, 0.61);
-  
+
 }
-/*label {
-  color: whitesmoke;
-}*/
-.collapsible-header{
+
+.collapsible-header {
   background-color: rgba(231, 229, 229);
-  
-  
 }
+
 #prefBar {
   background-color: rgba(116, 113, 113, 0.712);
   color: whitesmoke;
@@ -186,11 +208,9 @@ h1 {
   background-color: transparent;
   background-size: 100%;
   color: rgb(143, 140, 140);
-  text-shadow:4px 4px 4px rgb(40, 66, 26);
+  text-shadow: 4px 4px 4px rgb(40, 66, 26);
   font-size: 75px;
- 
 }
-
 
 .card-title {
   display: inline-block;
@@ -201,29 +221,30 @@ h1 {
   font-size: 16px !important;
   background-color: transparent;
 }
+
 #title {
-    color: rgb(19, 18, 18);
-    font-weight: bold;
-    font-family: 'Handlee', cursive;
+  color: rgb(19, 18, 18);
+  font-weight: bold;
+  font-family: 'Handlee', cursive;
 
-  }
-    /* width */
-    ::-webkit-scrollbar {
-      width: 10px;
-    }
+}
 
-    /* Track */
-    ::-webkit-scrollbar-track {
-      background: #f1f1f1;
-    }
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
 
-    /* Handle */
-    ::-webkit-scrollbar-thumb {
-      background: #888;
-    }
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
 
-    /* Handle on hover */
-    ::-webkit-scrollbar-thumb:hover {
-      background: #555;
-    }
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
 
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
