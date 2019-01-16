@@ -10,7 +10,7 @@ h1 {
   font-family: 'Princess Sofia', cursive;
   text-shadow: 4px 4px 4px rgb(255, 255, 255);
   font-size: 80px;
-  padding-left: 10px;
+  
   color:rgb(43, 54, 35);
 
 }
@@ -91,20 +91,27 @@ color: red;
 }
 
 #repBody {
-  background-image: url("../images/brickwork.jpg");
+  background-image: url("../images/boards-brown.jpg");
   background-size: 100%;
  
 }
 #panelHead {
   background-color: transparent;
+  background-size: 80%;
+
 }
 
 #hTag {
   color:rgb(24, 22, 22) ;
   font-family: 'Princess Sofia', cursive;
-  text-shadow: 4px 4px 4px rgb(192, 185, 185);
+  text-shadow: 4px 4px 4px rgb(243, 233, 233);
   font-size: 80px;
   padding-left: 10px;
+}
+.dropdown-button,
+#search_recipe,
+.dropdown-content {
+  background-color: rgba(0, 0, 0, 0.801);
 }
 
 /* Preferences*/
@@ -150,7 +157,7 @@ h1 {
   font-family: 'Princess Sofia', cursive;
   text-shadow: 4px 4px 4px rgb(255, 255, 255);
   font-size: 80px;
-  padding-left: 10px;
+ 
   
 }
 
@@ -162,7 +169,7 @@ h1 {
   color: whitesmoke;
 }*/
 .collapsible-header{
-  background-color: rgb(231, 229, 229);
+  background-color: rgba(231, 229, 229);
   
   
 }
