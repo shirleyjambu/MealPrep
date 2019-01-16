@@ -14,7 +14,7 @@
 
     <!-- Materialize CSS CDN -->
     <!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"-->
-    <link href="https://fonts.googleapis.com/css?family=Princess Sofia:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Princess Sofia|Playfair+Display:400,700" rel="stylesheet">
 
     <!-- Firebase Reference -->
     <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
@@ -43,6 +43,13 @@
             font-size: 20px;
         }
 
+        #btnLogout{
+            background-color: rgba(169, 169, 169, 0.466);
+         }
+         #welContainer {
+             font-family: 'Playfair Display', serif;
+             font-weight: bold;
+         }
     </style>
 </head>
 
@@ -50,7 +57,7 @@
 <body id="welBody">
     <!--Logout Div-->
     <div id="logoutBtn">
-        Welcome <span id="loggedUser"></span>&nbsp;&nbsp;<a href="index.html"  class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>Logout</a></div>
+        Welcome <span id="loggedUser"></span>&nbsp;&nbsp;<a href="index.html"  class="waves-effect waves-light btn" id="btnLogout"><i class="material-icons left">cloud</i>Logout</a></div>
     </div>
     <!--Header-->
     <header id="welHead">
@@ -83,7 +90,7 @@
                     <!--Modal for Preference-->
                     
                     <!-- Modal Trigger -->
-                    <button data-target="modal1" class="waves-effect waves-light  modal-trigger"><i class="material-icons left">local_activity</i>Update Preferences</button>
+                    <button data-target="modal1" class="waves-effect waves-light  modal-trigger"><i class="material-icons left">settings</i>Update Preferences</button>
                     
                     
                     <!-- Modal Structure -->
