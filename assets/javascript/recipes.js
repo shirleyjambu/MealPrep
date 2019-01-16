@@ -120,8 +120,6 @@ $('#search_recipe').on('click', function () {
     return;
   }
 
-
-
   var queryURL = "https://api.edamam.com/search" + query_string + "&app_id=" + app_id + "&app_key=" + app_key;
 
   // Performing an AJAX request with the queryURL

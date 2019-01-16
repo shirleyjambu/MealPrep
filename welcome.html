@@ -23,55 +23,38 @@
 
     <!-- Your custom styles -->
     <link rel="stylesheet" href="./assets/css/style.css">
-    <style>
-        #logoutBtn{
-        margin: 5px;
-        float: right;
-        color:whitesmoke;
-        font-size:20px;    
-        }
 
-        #allergiesSpan{
-            color:red;
-        }
-
-        #dietSpan{
-            color:red;
-        }
-
-        #favTitle{
-            font-size: 20px;
-        }
-
-    </style>
 </head>
 
 
 <body id="welBody">
     <!--Logout Div-->
     <div id="logoutBtn">
-        Welcome <span id="loggedUser"></span>&nbsp;&nbsp;<a href="index.html"  class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>Logout</a></div>
+        Welcome <span id="loggedUser"></span>&nbsp;&nbsp;<a href="index.html" class="waves-effect waves-light btn"><i
+                class="material-icons left">cloud</i>Logout</a></div>
     </div>
     <!--Header-->
     <header id="welHead">
         <div class="card-panel jumbotronStyle" id="welDiv">
-            <a href="index.html"><h1>Mortar & Pestle</h1></a>
-         </div>      
+            <a href="index.html">
+                <h1>Mortar & Pestle</h1>
+            </a>
+        </div>
     </header>
     <!--Main Content-->
-    <main>  
+    <main>
         <div class="container" id="welContainer">
             <!-- Favorites-->
             <div id="favTitle">
                 Saved Recipes
-            </div>    
+            </div>
             <div id="favs">
 
             </div>
             <!-- Preferences-->
             <div>
                 Recipes are searched based on your preferences.
-            </div>    
+            </div>
             <div>
                 Allergies : <span id="allergiesSpan">None</span>&nbsp;&nbsp;&nbsp;&nbsp;Diet : <span id="dietSpan">None</span>
             </div>
@@ -79,123 +62,128 @@
             <form id="searchForm">
                 <div class="input-field">
                     <input placeholder="Enter Ingredient" id="ingredient" type="text" class="validate">
-                    <button class="waves-effect  waves-light" type="submit" id="searchbyIng"><i class="material-icons left">search</i> Search by Ingredient</button>
+                    <button class="waves-effect  waves-light" type="submit" id="searchbyIng"><i class="material-icons left">search</i>
+                        Search by Ingredient</button>
                     <!--Modal for Preference-->
-                    
+
                     <!-- Modal Trigger -->
-                    <button data-target="modal1" class="waves-effect waves-light  modal-trigger"><i class="material-icons left">local_activity</i>Update Preferences</button>
-                    
+                    <button data-target="modal1" class="waves-effect waves-light  modal-trigger"><i class="material-icons left">local_activity</i>Update
+                        Preferences</button>
+
                     <div id="errorMsg"></div>
-                    
+
                     <!-- Modal Structure -->
                     <div id="modal1" class="modal">
-                      <div class="modal-content">
-                      <!--Preference code-->
-                      <form id="myform">
-                            <ul class="collapsible">
-                            <li>
-                                <div class="collapsible-header" id="prefBar"><i class="material-icons">edit</i>
-                                    My Allergies</div>
-                                <div class="collapsible-body">
-                                    <table>
-                                        <tr>
-                                            <td>
-                                                <label for="peanuts">
-                                                    <input id="peanuts" type="checkbox" />
-                                                    <span>Peanuts</span>
-                                                </label>
-                                            </td>
-                                            <td>
-                                                <label for="eggs">
-                                                    <input id="eggs" type="checkbox" />
-                                                    <span>Eggs</span>
-                                                </label>
-                                            </td>
-                                            <td><label for="gluten">
-                                                    <input id="gluten" type="checkbox" />
-                                                    <span>Gluten</span>
-                                                </label>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <label for="soy">
-                                                    <input id="soy" type="checkbox" />
-                                                    <span>Soy</span>
-                                                </label>
-                                            </td>
-                                            <td>
-                                                <label for="dairy">
-                                                    <input id="dairy" type="checkbox" />
-                                                    <span>Dairy</span>
-                                                </label>
-                                            </td>
-                                            <td>
-                                                <label for="shellfish">
-                                                    <input id="shellfish" type="checkbox" />
-                                                    <span>Shellfish</span>
-                                                </label>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="collapsible-header" id="prefBar"><i class="material-icons">edit</i>My Diets</div>
-                                <div class="collapsible-body">
-                                    <table>
-                                        <tr>
-                                    <td>
-                                            <label for="balanced">
-                                                <input id="balanced" type="checkbox" />
-                                                <span>Balanced</span>
-                                            </label>
-                                            </td>
-                                            <td>
-                                            <label for="high-protein">
-                                                <input id="high-protein" type="checkbox" />
-                                                <span>High Protein</span>
-                                            </label>
-                                            </td>
-                                            <td>
-                                            <label for="high-fiber">
-                                                <input id="high-fiber" type="checkbox" />
-                                                <span>High-Fiber</span>
-                                            </label>
-                                            </td>
-                                        </tr><tr>
-                                            <td>
-                                            <label for="low-fat">
-                                                <input id="low-fat" type="checkbox" />
-                                                <span>Low Fat</span>
-                                            </label>
-                                            </td>
-                                            <td>
-                                            <label for="low-carb">
-                                                <input id="low-carb" type="checkbox" />
-                                                <span>Low Carbohydrate</span>
-                                            </label>
-                                            </td>
-                                            <td>
-                                            <label for="low-sodium">
-                                                <input id="low-sodium" type="checkbox" />
-                                                <span>Low Sodium</span>
-                                            </label>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </li>   
-                            </ul>
-                            <a class="waves-effect waves-ripple btn" id="pref"><i class="material-icons right">send</i>Save My Preferences</a>
-                            <span id="prefMessage"></span>
-                      </form>
-                      
-                      <!--End of Preference code-->
-                      </div>
-                      <div class="modal-footer">
-                           <a href="#!" id="pref_close" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
-                      </div>
+                        <div class="modal-content">
+                            <!--Preference code-->
+                            <form id="myform">
+                                <ul class="collapsible">
+                                    <li>
+                                        <div class="collapsible-header" id="prefBar"><i class="material-icons">edit</i>
+                                            My Allergies</div>
+                                        <div class="collapsible-body">
+                                            <table>
+                                                <tr>
+                                                    <td>
+                                                        <label for="peanuts">
+                                                            <input id="peanuts" type="checkbox" />
+                                                            <span>Peanuts</span>
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label for="eggs">
+                                                            <input id="eggs" type="checkbox" />
+                                                            <span>Eggs</span>
+                                                        </label>
+                                                    </td>
+                                                    <td><label for="gluten">
+                                                            <input id="gluten" type="checkbox" />
+                                                            <span>Gluten</span>
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label for="soy">
+                                                            <input id="soy" type="checkbox" />
+                                                            <span>Soy</span>
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label for="dairy">
+                                                            <input id="dairy" type="checkbox" />
+                                                            <span>Dairy</span>
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label for="shellfish">
+                                                            <input id="shellfish" type="checkbox" />
+                                                            <span>Shellfish</span>
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="collapsible-header" id="prefBar"><i class="material-icons">edit</i>My
+                                            Diets</div>
+                                        <div class="collapsible-body">
+                                            <table>
+                                                <tr>
+                                                    <td>
+                                                        <label for="balanced">
+                                                            <input id="balanced" type="checkbox" />
+                                                            <span>Balanced</span>
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label for="high-protein">
+                                                            <input id="high-protein" type="checkbox" />
+                                                            <span>High Protein</span>
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label for="high-fiber">
+                                                            <input id="high-fiber" type="checkbox" />
+                                                            <span>High-Fiber</span>
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label for="low-fat">
+                                                            <input id="low-fat" type="checkbox" />
+                                                            <span>Low Fat</span>
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label for="low-carb">
+                                                            <input id="low-carb" type="checkbox" />
+                                                            <span>Low Carbohydrate</span>
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label for="low-sodium">
+                                                            <input id="low-sodium" type="checkbox" />
+                                                            <span>Low Sodium</span>
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <a class="waves-effect waves-ripple btn" id="pref"><i class="material-icons right">send</i>Save
+                                    My Preferences</a>
+                                <span id="prefMessage"></span>
+                            </form>
+
+                            <!--End of Preference code-->
+                        </div>
+                        <div class="modal-footer">
+                            <a href="#!" id="pref_close" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+                        </div>
                     </div>
                     <!--End of Preference Modal-->
                 </div>
@@ -214,13 +202,12 @@
     <!-- Materialize JS CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <script src="./assets/javascript/welcome.js"></script>
-    
+
     <script>
-    $("document").ready(function () {
-      $('#modal1').modal();
-      $('.collapsible').collapsible();
-    });
-    
+        $("document").ready(function () {
+            $('#modal1').modal();
+            $('.collapsible').collapsible();
+        });
     </script>
 </body>
 
