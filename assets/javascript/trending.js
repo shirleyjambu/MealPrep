@@ -33,10 +33,17 @@ function setTrendingDataFromApi(food){
     });
 }
 
+function getRandomIngredient(){
+  var ingArr =['eggs','chicken','lamb','pomegranate','oatmeal','tuna','soup','beets','carrots','turnip','broccoli','cauliflower'];
+  var ind = Math.floor(Math.random() * ingArr.length);
+  var ing= ingArr[ind];
+  return ing;
+}
 
 function setTrendingRecipe(){
-  //$("#trendingRecipe").empty();
-  setTrendingDataFromApi("eggs");
+  $("#trendingRecipe").empty();
+  var ing = getRandomIngredient();
+  setTrendingDataFromApi(ing);
 }
 
 function getRecipeCard(recipe){
