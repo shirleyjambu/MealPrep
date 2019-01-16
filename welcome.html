@@ -39,6 +39,10 @@
             color:red;
         }
 
+        #favTitle{
+            font-size: 20px;
+        }
+
     </style>
 </head>
 
@@ -65,11 +69,11 @@
 
             </div>
             <!-- Preferences-->
-            <div id="favTitle">
+            <div>
                 Recipes are searched based on your preferences.
             </div>    
             <div>
-                Allergies : <span id="allergiesSpan">None</span>&nbsp;&nbsp;Diet : <span id="dietSpan">None</span>
+                Allergies : <span id="allergiesSpan">None</span>&nbsp;&nbsp;&nbsp;&nbsp;Diet : <span id="dietSpan">None</span>
             </div>
             <!-- form -->
             <form id="searchForm">
@@ -189,7 +193,7 @@
                       <!--End of Preference code-->
                       </div>
                       <div class="modal-footer">
-                           <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+                           <a href="#!" id="pref_close" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
                       </div>
                     </div>
                     <!--End of Preference Modal-->

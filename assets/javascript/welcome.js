@@ -34,9 +34,7 @@ function getRecipes(food){
   })
     // After data comes back from the request
     .then(function(response) {
-      
-      
-
+    
       for(var i=0;i<diet.length;i++){
         queryURL = queryURL + "&diet=" + diet[i];
       }
@@ -45,12 +43,11 @@ function getRecipes(food){
         queryURL = queryURL + "&excluded=" + allergies[i];
       }
 
-      console.log(queryURL);
+      //console.log(queryURL);
       //console.log(response);
+
       // storing the data from the AJAX request in the results variable
       var recipeData = response.hits;
-      //console.log("No of Recipes : " + recipeData.length);
-
       displayRecipes(recipeData);
       
     });
@@ -73,15 +70,9 @@ function getRecipeCard(recipe){
   var recipeSource = recipe.recipe.source;
   var recipeUrl = recipe.recipe.url;
 
- /* console.log("Inside RecipeCard : " + recipeLabel);
-  console.log("Recipeimage : " + recipeImage);
-  console.log("Recipesource : " + recipeSource);
-  console.log("Recipe url : " + recipeUrl);*/
-
   var $card = $("<div>").addClass("card small");
   var $cardImg = $("<div>").addClass("card-image");
   var $img = $("<img>");
-  //var $spTitle = $("<span>").addClass("card-title");
   var $cardInfo = $("<div>").addClass("card-content");
   var $cardAction = $("<div>").addClass("card-action");
   
@@ -89,8 +80,6 @@ function getRecipeCard(recipe){
   $img.attr("alt","Alt Text");
   $img.appendTo($cardImg);
   $cardImg.appendTo($card);
-
-  //$spTitle.text("Title").appendTo($card);
 
   $cardInfo.html(`By ${recipeSource}`);
   $cardInfo.appendTo($card);
@@ -103,6 +92,7 @@ function getRecipeCard(recipe){
   return $card;
 }
 
+//Parsing User Name from Email-id
 function getUserNameFromEmail(email){
   var ind = email.indexOf("@");
   var uName = email.substr(0,ind);
@@ -116,17 +106,24 @@ function addToFavorites(favRecipe){
   var favKey = favRecipe.key;
   // Added as chips
   $("#favs").append(`<div class="chip"><a href="${favUrl}" target="new">${favTitle}</a><i class="close material-icons" data-key='${favKey}'>close</i></div>`);
-      
 }
 
+// Checks to see if the preference is an allergy/diet 
+// Used in Query and to set in page
 function setPreferencesToCheck(prefObj){
   var excludesArr =['peanuts','shellfish','dairy','soy','gluten','eggs'];
   var dietArr =['low-carb','balanced','high-protein','high-fiber','low-fat','low-sodium'];
+  
+  // Clear Values displayed
+  $("#dietSpan").text("None");
+  $("#allergiesSpan").text("None");
 
   for(var key in prefObj){
+    
     if(prefObj[key]===true){
+      
       if(excludesArr.includes(key)){
-        //add in excludes
+        //add in global excludes array
         allergies.push(key);
         if($("#allergiesSpan").text()==="None"){
           $("#allergiesSpan").text(key);
@@ -135,18 +132,18 @@ function setPreferencesToCheck(prefObj){
         }
         
       }else if(dietArr.includes(key)){
-        //add in diet
+        //add in global diet array
         diet.push(key);
         if($("#dietSpan").text()==="None"){
           $("#dietSpan").text(key);
         }else{
           $("#dietSpan").append(", "+ key);
         }
-        
       }
     }
   }
 }
+
 //Function to camelCase strings
 function camelize(str) {
   return str.replace(/(?:^\w|[A-Z]|\b\w|\s+)/g, function(match, index) {
@@ -168,7 +165,7 @@ function getAllDetails(){
           allCb[chks[i].id] = false;
         }
     }
-  console.log(allCb);
+  
   return allCb;
 }
 
@@ -188,7 +185,7 @@ firebase.auth().onAuthStateChanged(function(user) {
     localStorage.setItem("mpUserName",userName);
     $("#loggedUser").text(camelize(userName));
   } else {
-    console.log("NOT Logged USER");
+    //console.log("Not a logged in User");
     // No user is signed in.
   }
 });
@@ -199,7 +196,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 prefRef.on("child_added",function (prefSnapshot) {
     //Set the key, as global var for update
     preferenceKey = prefSnapshot.key;
-
+    
     setPreferencesToCheck(prefSnapshot.val());
     setPreferences(prefSnapshot.val());
 });
@@ -208,7 +205,7 @@ prefRef.on("child_added",function (prefSnapshot) {
 prefRef.on("child_changed",function (prefSnapshot) {
   //Set the key, as global var for update
   preferenceKey = prefSnapshot.key;
-
+  
   setPreferencesToCheck(prefSnapshot.val());
   setPreferences(prefSnapshot.val());
 });
@@ -231,7 +228,6 @@ $(document).ready(function(){
     event.preventDefault();
     
     var ing = $("#ingredient").val().trim();
-    console.log("Search by Ing : " + ing);
     $("#ingredient").val("");
     
     getRecipes(ing);
@@ -264,4 +260,9 @@ $(document).ready(function(){
     $("#prefMessage").text("Preferences Saved.");
   });
 
+  ////Clear the Saved message
+  $("#pref_close").on("click",function(){
+    $("#prefMessage").text("");
+  });
+  
 });
