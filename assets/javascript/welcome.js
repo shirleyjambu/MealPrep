@@ -14,6 +14,8 @@ var userName = localStorage.getItem("mpUserName");
 var favsRef = database.ref("/"+userName+"/favs");
 var prefRef = database.ref("/"+userName+"/pref");
 
+var preferenceKey = "";
+
 //Global Variables
 var diet=[];
 var allergies=[];
@@ -32,7 +34,7 @@ function getRecipes(food){
   })
     // After data comes back from the request
     .then(function(response) {
-      //console.log(queryURL);
+      
       
 
       for(var i=0;i<diet.length;i++){
@@ -43,7 +45,7 @@ function getRecipes(food){
         queryURL = queryURL + "&excluded=" + allergies[i];
       }
 
-
+      console.log(queryURL);
       //console.log(response);
       // storing the data from the AJAX request in the results variable
       var recipeData = response.hits;
@@ -118,18 +120,63 @@ function addToFavorites(favRecipe){
 }
 
 function setPreferencesToCheck(prefObj){
-  var excludesArr =['gluten-free','tree-nut-free','peanut-free'];
-  var dietArr =['low-carb','balanced'];
+  var excludesArr =['peanuts','shellfish','dairy','soy','gluten','eggs'];
+  var dietArr =['low-carb','balanced','high-protein','high-fiber','low-fat','low-sodium'];
 
   for(var key in prefObj){
     if(prefObj[key]===true){
-      if(excludesArr.includes(prefObj[key])){
+      if(excludesArr.includes(key)){
         //add in excludes
-        allergies.push(prefObj[key]);
-      }else if(dietArr.includes(prefObj[key])){
+        allergies.push(key);
+        if($("#allergiesSpan").text()==="None"){
+          $("#allergiesSpan").text(key);
+        }else{
+          $("#allergiesSpan").append(", "+ key);
+        }
+        
+      }else if(dietArr.includes(key)){
         //add in diet
-        diet.push(prefObj[key]);
+        diet.push(key);
+        if($("#dietSpan").text()==="None"){
+          $("#dietSpan").text(key);
+        }else{
+          $("#dietSpan").append(", "+ key);
+        }
+        
       }
+    }
+  }
+}
+//Function to camelCase strings
+function camelize(str) {
+  return str.replace(/(?:^\w|[A-Z]|\b\w|\s+)/g, function(match, index) {
+    if (+match === 0) return ""; // or if (/\s+/.test(match)) for white spaces
+    return index == 0 ? match.toUpperCase() : match.toUpperCase();
+  });
+}
+
+//Function to get all preferences from Form
+function getAllDetails(){
+  
+  var chks = $('input[type="checkbox"]');
+  var allCb = {};
+    
+  for(var i = 0; i < chks.length; i++){
+      if(chks[i].checked){
+          allCb[chks[i].id] = true;
+        }else{
+          allCb[chks[i].id] = false;
+        }
+    }
+  console.log(allCb);
+  return allCb;
+}
+
+// Sets the form with the preference from Db
+function setPreferences(prefObj){
+  for(var key in prefObj){
+    if(prefObj[key]===true){
+      $("#"+key).attr("checked",true);
     }
   }
 }
@@ -139,17 +186,33 @@ firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     var userName = getUserNameFromEmail(user.email);
     localStorage.setItem("mpUserName",userName);
-    $("#loggedUser").text(userName);
+    $("#loggedUser").text(camelize(userName));
   } else {
     console.log("NOT Logged USER");
     // No user is signed in.
   }
 });
 
+// Listeners
+
 // Check for Preferences in firebase
 prefRef.on("child_added",function (prefSnapshot) {
+    //Set the key, as global var for update
+    preferenceKey = prefSnapshot.key;
+
     setPreferencesToCheck(prefSnapshot.val());
+    setPreferences(prefSnapshot.val());
 });
+
+// Check for Preferences Updated in firebase
+prefRef.on("child_changed",function (prefSnapshot) {
+  //Set the key, as global var for update
+  preferenceKey = prefSnapshot.key;
+
+  setPreferencesToCheck(prefSnapshot.val());
+  setPreferences(prefSnapshot.val());
+});
+
 
 //Onload get Favs
 favsRef.on("child_added",function (favSnapshot) {
@@ -188,6 +251,17 @@ $(document).ready(function(){
     var favKey=$(this).attr("data-key");
     var favItem = database.ref("/"+userName+"/favs/"+favKey);
     favItem.remove();
+  });
+
+  //Save or Update Preferences
+  $("#pref").on("click", function(){
+    var prefData = getAllDetails();
+    if(preferenceKey === ""){
+      prefRef.push(prefData);
+    }else{
+      database.ref("/"+userName+"/pref/" + preferenceKey).update(prefData);
+    }
+    $("#prefMessage").text("Preferences Saved.");
   });
 
 });

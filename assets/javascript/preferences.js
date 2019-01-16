@@ -67,9 +67,7 @@ $("#pref").on("click", function(){
   }else{
     database.ref("/"+userName+"/pref/" + preferenceKey).update(prefData);
   }
-  
-
-})
+});
 
 // Listeners
 prefRef.on("child_added",function (prefSnapshot) {
