@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+​
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>MealPrep</title>
+  <!-- Firebase link -->
+  <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
+​
+ <!-- Material Icon CDN -->
+ <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+​
+ <!-- Compiled and minified CSS -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+​
+ <!-- Compiled and minified JavaScript -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+ <link href="https://fonts.googleapis.com/css?family=Princess Sofia|Playfair+Display:400,700" rel="stylesheet">
+​
+ <!-- Your custom styles -->
+ <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+​
+<body id="prefBody">
+​<header>
+  
+</header>
+ <main>
+  <!-- Your Code goes here-->
+  <div class="card-panel" id="myKitchen"><p class="text-left">Mortal & Pestle</p></div>
+ 
+  <form action="" id="myform">
+  <ul class="collapsible">
+    <li>
+    <div class="collapsible-header" id="prefBar"><i class="material-icons">edit</i>
+     My Allergies</div>
+    <div class="collapsible-body"><span>
+      <p>
+       <label for="peanuts">
+        <input id="peanuts" type="checkbox" />
+        <span>Peanuts</span>
+       </label>
+      </p>
+      <p>
+       <label for="eggs">
+        <input id="eggs" type="checkbox" />
+        <span>Eggs</span>
+       </label>
+      </p>
+      <p>
+       <label for="gluten">
+        <input id="gluten" type="checkbox" />
+        <span>Gluten</span>
+       </label>
+      </p>
+      <p>
+       <label for="soy">
+        <input id="soy" type="checkbox" />
+        <span>Soy</span>
+       </label>
+      </p>
+      <p>
+       <label for="dairy">
+        <input id="dairy" type="checkbox" />
+        <span>Dairy</span>
+       </label>
+      </p>
+      <p>
+       <label for="shellfish">
+        <input id="shellfish" type="checkbox" />
+        <span>Shellfish</span>
+       </label>
+      </p>
+      
+     </span></div>
+   </li>
+   <li>
+    <div class="collapsible-header" id="prefBar"><i class="material-icons">edit</i>My Diets</div>
+    <div class="collapsible-body" ><span>
+      <p>
+       <label for="balanced">
+        <input id="balanced" type="checkbox" />
+        <span>Balanced</span>
+       </label>
+      </p>
+      <p>
+       <label for="high-protein">
+        <input id="high-protein" type="checkbox" />
+        <span>High Protein</span>
+       </label>
+      </p>
+      <p>
+       <label for="high-fiber">
+        <input id="high-fiber" type="checkbox" />
+        <span>High-Fiber</span>
+       </label>
+      </p>
+      <p>
+       <label for="low-fat">
+        <input id="low-fat" type="checkbox" />
+        <span>Low Fat</span>
+       </label>
+      </p>
+      <p>
+       <label for="low-carb">
+        <input id="low-carb" type="checkbox" />
+        <span>Low Carbohydrate</span>
+       </label>
+      </p>
+      <p>
+       <label for="low-sodium">
+        <input id="low-sodium" type="checkbox" />
+        <span>Low Sodium</span>
+       </label>
+      </p>
+      </span></div>
+   </li>
+  </ul>
+​ <a class="waves-effect waves-ripple btn" id="pref"><i class="material-icons right">send</i>Save My Preferences</a>
+  </form>
+​<br>
+
+  <a id="linkHome" href="index.html">Mortar & Pestle</a>
+  <!-- <form class="form">
+   <div class="form-group">
+    <label for="cuisine">Cuisine</label>
+    <input type="text" id="cuisine" classs="form-control">
+   </div>
+​
+   <div class="form-group">
+    <label for="diet">Dietary</label>
+    <input type="text" id="diet" classs="form-control">
+   </div>
+​
+   <button id="savePreferences" class="btn btn-secondary">Save Preferences</button>
+  </form>
+  </div> -->
+​
+ </main>
+​
+ <!--End of your Code-->
+ 
+ <!-- jQuery CDN -->
+ <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+ <!-- Materialize JS CDN -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+​
+ <script src="./assets/javascript/preferences.js"></script>
+​
+</body>
+​
+</html>
