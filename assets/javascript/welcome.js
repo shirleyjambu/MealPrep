@@ -126,18 +126,18 @@ function setPreferencesToCheck(prefObj) {
         //add in global excludes array
         allergies.push(key);
         if ($("#allergiesSpan").text() === "None") {
-          $("#allergiesSpan").text(key);
+          $("#allergiesSpan").text(camelize(key));
         } else {
-          $("#allergiesSpan").append(", " + key);
+          $("#allergiesSpan").append(", " + camelize(key));
         }
 
       } else if (dietArr.includes(key)) {
         //add in global diet array
         diet.push(key);
         if ($("#dietSpan").text() === "None") {
-          $("#dietSpan").text(key);
+          $("#dietSpan").text(camelize(key));
         } else {
-          $("#dietSpan").append(", " + key);
+          $("#dietSpan").append(", " + camelize(key));
         }
       }
     }
