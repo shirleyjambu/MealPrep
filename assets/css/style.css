@@ -18,6 +18,19 @@ h1 {
   background-image: url("../images/chopping.jpg");
   background-size: 100%;
 }
+
+#searchbyIng {
+  background-color: rgb(236, 233, 233);
+  color: black;
+}
+
+#errorMsg {
+margin: 10px;
+text-align: center;
+color: red;
+}
+
+
 /* Home Page */
 
 
@@ -77,15 +90,22 @@ h1 {
   text-transform: uppercase;
 }
 
-.card-title {
-  display: inline-block;
-  width: 100%;
-  white-space: nowrap;
-  overflow: hidden !important;
-  text-overflow: ellipsis;
-  font-size: 16px !important;
+#repBody {
+  background-image: url("../images/brickwork.jpg");
+  background-size: 100%;
+ 
+}
+#panelHead {
+  background-color: transparent;
 }
 
+#hTag {
+  color:rgb(24, 22, 22) ;
+  font-family: 'Princess Sofia', cursive;
+  text-shadow: 4px 4px 4px rgb(192, 185, 185);
+  font-size: 80px;
+  padding-left: 10px;
+}
 
 /* Preferences*/
 #prefForm{

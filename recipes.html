@@ -22,7 +22,15 @@
  
  <style>
 
-
+.card-title {
+  display: inline-block;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+  font-size: 16px !important;
+  background-color: transparent;
+}
   
     /* width */
     ::-webkit-scrollbar {
@@ -46,12 +54,12 @@
   </style>
 </head>
 
-<body id="hombody">
+<body id="repBody">
 
 
-  <div class="card-panel grey lighten-2 jumbotronStyle">
-    <div>
-      <h1>Let's get Cooking</h1>
+  <div class="card-panel jumbotronStyle" id="panelHead">
+    <div><a href="index.html">
+      <h1 id="hTag">Mortar & Pestle</h1></a>
     </div>
   </div>
 
@@ -104,7 +112,7 @@
         <i class="material-icons right">arrow_drop_down</i>
       </a>
 
-      <a id="linkHome" href="index.html">Meal Prep Home</a>
+      
 
     </div>
 
