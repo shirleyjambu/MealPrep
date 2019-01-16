@@ -191,3 +191,39 @@ h1 {
  
 }
 
+
+.card-title {
+  display: inline-block;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+  font-size: 16px !important;
+  background-color: transparent;
+}
+#title {
+    color: rgb(19, 18, 18);
+    font-weight: bold;
+    font-family: 'Handlee', cursive;
+
+  }
+    /* width */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: #888;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+
