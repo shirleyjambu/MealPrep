@@ -7,12 +7,11 @@ Completed
   2. Formspree - For issues logging.
 
 2. Used Materialize as a new technology.
-3. Used Modals
+3. Used Modals for issue logging, setting preferences.
+4. Used FireBase Authentication and FireBase Database.
 
 Pending
 
 Must meet good quality coding standards (indentation, scoping, naming)
-
-Must have some sort of repeating element (table, columns, etc)
 
 Must have User Input Validation 

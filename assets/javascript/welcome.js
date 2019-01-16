@@ -226,12 +226,14 @@ $(document).ready(function(){
     //Search Recipes
   $("#searchbyIng").on("click",function(){
     event.preventDefault();
-    
+    $("#errorMsg").text("");
     var ing = $("#ingredient").val().trim();
-    $("#ingredient").val("");
-    
-    getRecipes(ing);
-   
+    if(ing === ""){
+      $("#errorMsg").text("Please enter an ingredient");
+    }else{
+      $("#ingredient").val("");
+      getRecipes(ing);
+    }
   });
 
   // Add to Favorites
